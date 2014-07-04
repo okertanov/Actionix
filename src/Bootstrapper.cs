@@ -1,5 +1,6 @@
 ﻿using System;
 using MonoMac.AppKit;
+using System.Drawing;
 
 namespace Actionix
 {
@@ -7,7 +8,10 @@ namespace Actionix
 	{
 		public static void Bootstrap()
 		{
-			var systemStatusBarItem = NSStatusBar.SystemStatusBar.CreateStatusItem(24);
+			//
+			// Status bar menu
+			//
+			var systemStatusBarItem = NSStatusBar.SystemStatusBar.CreateStatusItem(SharedSettings.StatusBarIconSize.Width);
 
 			var iconMenuVisualizer = new IconMenuVisualizer();
 			iconMenuVisualizer.AttachTo(systemStatusBarItem);
@@ -18,6 +22,26 @@ namespace Actionix
 				new AppMenuItemsBuilder()
 			});
 			systemStatusBarItem.Menu = menuBuilder.Build();
+
+			//
+			// Global Shortcut Key Handler
+			//
+			// System Preferences > Security & Privacy > Privacy > Accessibility
+			//
+			var globalShortcutKeyMonitor = new GlobalShortcutKeyMonitor((ev) => {
+				systemStatusBarItem.Menu.PopUpMenu(systemStatusBarItem.Menu.ItemAt(0), ev.LocationInWindow, null);
+			});
+
+			//
+			// Periodic ticker
+			// NSEvent.StartPeriodicEventsAfterDelay
+			//
+
+
+			/*var alert = new NSAlert();
+			alert.MessageText = "Hi!";
+			alert.InformativeText = "...";
+			alert.RunModal();*/
 		}
 	}
 }

@@ -61,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="MonoMac" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -83,6 +84,8 @@
     <Compile Include="MenuVisualizers\IconMenuVisualizer.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="MenuBuilders\DirectoryMenuItemsBuilder.cs" />
+    <Compile Include="KeyCodesOSX.cs" />
+    <Compile Include="GlobalShortcutKeyMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
