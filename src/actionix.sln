@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "actionix", "actionix.csproj", "{14701A61-7E74-4F92-A5B8-CE87B4DE78BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actionix", "Actionix.csproj", "{14701A61-7E74-4F92-A5B8-CE87B4DE78BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +18,6 @@ Global
 		{14701A61-7E74-4F92-A5B8-CE87B4DE78BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = actionix.csproj
+		StartupItem = Actionix.csproj
 	EndGlobalSection
 EndGlobal

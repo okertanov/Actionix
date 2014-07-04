@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoMac.AppKit;
 
-namespace actionix
+namespace Actionix
 {
 	class ActionixMain
 	{

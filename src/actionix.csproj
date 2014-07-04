@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{14701A61-7E74-4F92-A5B8-CE87B4DE78BE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>actionix</RootNamespace>
+    <RootNamespace>Actionix</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>actionix</AssemblyName>
+    <AssemblyName>Actionix</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -59,23 +59,33 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
     <Reference Include="MonoMac" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="MenuBuilders\" />
+    <Folder Include="MenuVisualizers\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="SharedSettings.cs" />
+    <Compile Include="Interfaces\IMenuBuilder.cs" />
+    <Compile Include="Interfaces\IMenuItemsBuilder.cs" />
+    <Compile Include="MenuBuilders\StaticMenuItemsBuilder.cs" />
+    <Compile Include="MenuBuilders\AppMenuItemsBuilder.cs" />
+    <Compile Include="MenuBuilders\SeparatorMenuItemsBuilder.cs" />
+    <Compile Include="MenuBuilders\DynamicMenuItemsBuilder.cs" />
+    <Compile Include="MenuBuilders\MenuBuilder.cs" />
+    <Compile Include="Interfaces\IMenuVisualizer.cs" />
+    <Compile Include="MenuVisualizers\IconMenuVisualizer.cs" />
+    <Compile Include="Bootstrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <BundleResource Include="..\resources\atom-256x256.png">
       <Link>Resources\atom-256x256.png</Link>
@@ -94,4 +104,5 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
