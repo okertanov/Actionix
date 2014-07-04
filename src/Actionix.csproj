@@ -68,6 +68,7 @@
     <Folder Include="Interfaces\" />
     <Folder Include="MenuBuilders\" />
     <Folder Include="MenuVisualizers\" />
+    <Folder Include="CommandExecutors\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -86,6 +87,10 @@
     <Compile Include="MenuBuilders\DirectoryMenuItemsBuilder.cs" />
     <Compile Include="KeyCodesOSX.cs" />
     <Compile Include="GlobalShortcutKeyMonitor.cs" />
+    <Compile Include="Interfaces\ICommandExecutor.cs" />
+    <Compile Include="CommandExecutors\ShellCommandExecutor.cs" />
+    <Compile Include="Interfaces\ICommandContext.cs" />
+    <Compile Include="CommandExecutors\ApplicationCommandExecutor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
