@@ -4,9 +4,9 @@ using MonoMac.AppKit;
 namespace Actionix
 {
 	//
-	// Creates dynamic event entries, like time, processes, etc.
+	// Creates the entires from a file system directory structure
 	//
-	public class DynamicMenuItemsBuilder : IMenuItemsBuilder
+	public class DirectoryMenuItemsBuilder : IMenuItemsBuilder
 	{
 		public void AttachTo(NSMenu menu)
 		{

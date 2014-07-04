@@ -82,6 +82,7 @@
     <Compile Include="Interfaces\IMenuVisualizer.cs" />
     <Compile Include="MenuVisualizers\IconMenuVisualizer.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="MenuBuilders\DirectoryMenuItemsBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

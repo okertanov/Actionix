@@ -3,6 +3,9 @@ using MonoMac.AppKit;
 
 namespace Actionix
 {
+	//
+	// Own app menu items
+	//
 	public class AppMenuItemsBuilder : IMenuItemsBuilder
 	{
 		public void AttachTo(NSMenu menu)
