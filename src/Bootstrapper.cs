@@ -17,6 +17,8 @@ namespace Actionix
 			iconMenuVisualizer.AttachTo(systemStatusBarItem);
 
 			var menuBuilder = new MenuBuilder(SharedSettings.AppName, new IMenuItemsBuilder[] {
+				new NewObjectMenuItemsBuilder(),
+				new SeparatorMenuItemsBuilder(),
 				new StaticMenuItemsBuilder(),
 				new SeparatorMenuItemsBuilder(),
 				new AppMenuItemsBuilder()

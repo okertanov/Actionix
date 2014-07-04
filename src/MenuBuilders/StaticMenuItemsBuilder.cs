@@ -8,35 +8,26 @@ namespace Actionix
 	//
 	// Create static/hardcoded entires
 	//
-	public class StaticMenuItemsBuilder : IMenuItemsBuilder
+	public class StaticMenuItemsBuilder : BaseMenuItemsBuilder
 	{
-		private static readonly ShellCommandExecutor _shellCommandExecutor = new ShellCommandExecutor();
-		private static readonly ApplicationCommandExecutor _applicationCommandExecutor = new ApplicationCommandExecutor();
-
-		private static readonly Dictionary<string, Action> MenuItems = new Dictionary<string, Action>()
+		private static readonly Dictionary<string, Action> StaticMenuItems = new Dictionary<string, Action>()
 		{
-			{ "Vim",			() => _applicationCommandExecutor.Execute("MacVim.app") 	},
-			{ "Chrome",			() => _applicationCommandExecutor.Execute("Google Chrome.app")	},
-			{ "Terminal",		() => _applicationCommandExecutor.Execute("Terminal.app")	},
-			{ "Lock Screen",	() => _shellCommandExecutor.Execute("/System/Library/CoreServices/Menu%20Extras/user.menu/Contents/Resources/CGSession -suspend") 		}
+			{ "Vim",				() => _applicationCommandExecutor.Execute("MacVim.app") },
+			{ "Terminal",			() => _applicationCommandExecutor.Execute("Terminal.app") },
+			{ "Google Chrome",		() => _applicationCommandExecutor.Execute("Google Chrome.app") },
+			{ "--------", 			null },
+			{ "System Preferences",	() => _applicationCommandExecutor.Execute("System Preferences.app") },
+			{ "Lock Screen",		() => _shellCommandExecutor.Execute("/System/Library/CoreServices/Menu%20Extras/user.menu/Contents/Resources/CGSession -suspend") }
 		};
 
-		public void AttachTo(NSMenu menu)
+		protected override Dictionary<string, Action> MenuItems
 		{
-			MenuItems.ToList().ForEach(item => menu.AddItem(new NSMenuItem(item.Key, "", OnMenu)));
-		}
+			get {
+				return StaticMenuItems;
+			}
 
-		private void OnMenu(object sender, EventArgs args)
-		{
-			var item = sender as NSMenuItem;
-
-			if (item != null)
-			{
-				var action = MenuItems[item.Title];
-				if (action != null)
-				{
-					action.Invoke();
-				}
+			set {
+				throw new NotSupportedException();
 			}
 		}
 	}

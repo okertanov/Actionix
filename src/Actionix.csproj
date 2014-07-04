@@ -91,6 +91,9 @@
     <Compile Include="CommandExecutors\ShellCommandExecutor.cs" />
     <Compile Include="Interfaces\ICommandContext.cs" />
     <Compile Include="CommandExecutors\ApplicationCommandExecutor.cs" />
+    <Compile Include="MenuBuilders\NewObjectMenuItemsBuilder.cs" />
+    <Compile Include="MenuBuilders\BaseMenuItemsBuilder.cs" />
+    <Compile Include="CommandExecutors\SelectorCommandExecutor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

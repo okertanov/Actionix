@@ -31,6 +31,5 @@ namespace Actionix
 			NSWorkspace.SharedWorkspace.LaunchApplication(context);
 		}
 	}
-
 }
 
