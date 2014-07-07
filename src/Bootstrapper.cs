@@ -36,6 +36,7 @@ namespace Actionix
 
 			//
 			// Periodic ticker
+            // See https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html
 			// NSEvent.StartPeriodicEventsAfterDelay
 			//
 
