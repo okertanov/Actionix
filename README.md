@@ -1,6 +1,12 @@
 Actionix
 ========
 
+Plug-in ideas
+-------------
+ - Battery health
+ - Processes list
+ - Gmail API tags
+
 Resources
 ---------
 [App Icon](https://www.iconfinder.com/icons/183175/genius_icon#size=512)  
