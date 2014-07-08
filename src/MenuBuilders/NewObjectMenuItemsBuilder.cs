@@ -12,9 +12,9 @@ namespace Actionix
 	{
 		private static readonly Dictionary<string, Action> NewObjectMenuItems = new Dictionary<string, Action>()
 		{
-			{ "New File on Desktop",	() => _selectorCommandExecutor.Execute("NewFileOnDesktop") },
-			{ "New Vim Buffer",			() => _selectorCommandExecutor.Execute("NewVimBuffer") },
-			{ "New Google Chrome Tab",	() => _selectorCommandExecutor.Execute("NewGoogleChromeTab") },
+			{ "New File on Desktop",	() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewFileOnDesktop") },
+			{ "New Vim Buffer",			() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewVimBuffer") },
+			{ "New Google Chrome Tab",	() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewGoogleChromeTab") },
 		};
 
 		protected override Dictionary<string, Action> MenuItems
@@ -27,11 +27,35 @@ namespace Actionix
 				throw new NotSupportedException();
 			}
 		}
+	}
 
+	internal class NewObjectMenuItemsHandler
+	{
 		[Export("NewFileOnDesktop")]
-		private void NewFileOnDesktop()
+		public static void NewFileOnDesktop()
 		{
+			var alert = new NSAlert();
+			alert.MessageText = "...";
+			alert.InformativeText = "NewFileOnDesktop";
+			alert.RunModal();
+		}
 
+		[Export("NewVimBuffer")]
+		public static void NewVimBuffer()
+		{
+			var alert = new NSAlert();
+			alert.MessageText = "...";
+			alert.InformativeText = "NewVimBuffer";
+			alert.RunModal();
+		}
+
+		[Export("NewGoogleChromeTab")]
+		public static void NewGoogleChromeTab()
+		{
+			var alert = new NSAlert();
+			alert.MessageText = "...";
+			alert.InformativeText = "NewGoogleChromeTab";
+			alert.RunModal();
 		}
 	}
 }

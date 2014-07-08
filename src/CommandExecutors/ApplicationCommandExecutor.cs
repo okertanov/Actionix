@@ -7,6 +7,7 @@ namespace Actionix
 {
 	public class ApplicationCommandContext : ICommandContext
 	{
+		public object Target { get; set; }
 		public string BundleName { get; set; }
 	}
 

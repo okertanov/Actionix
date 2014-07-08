@@ -5,6 +5,7 @@ namespace Actionix
 {
 	public class ShellCommandContext : ICommandContext
 	{
+		public object Target { get; set; }
 		public string CommandLine { get; set; }
 	}
 

@@ -40,7 +40,6 @@ namespace Actionix
 			// NSEvent.StartPeriodicEventsAfterDelay
 			//
 
-
 			/*var alert = new NSAlert();
 			alert.MessageText = "Hi!";
 			alert.InformativeText = "...";
