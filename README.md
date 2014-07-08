@@ -6,6 +6,10 @@ Plug-in ideas
  - Battery health
  - Processes list
  - Gmail API tags
+ - Gmail API notes
+ - Gmail API tasks
+ - Clipboard monitor
+ - Code snippets
 
 See also
 --------
