@@ -2,6 +2,8 @@
 using MonoMac.AppKit;
 using System.Collections.Generic;
 using MonoMac.Foundation;
+using MonoMac.ScriptingBridge;
+using System.Threading.Tasks;
 
 namespace Actionix
 {
@@ -40,12 +42,21 @@ namespace Actionix
 		}
 
 		[Export("NewGoogleChromeTab")]
-		public static void NewGoogleChromeTab()
+		public static async void NewGoogleChromeTab()
 		{
-			var alert = new NSAlert();
-			alert.MessageText = "...";
-			alert.InformativeText = "NewGoogleChromeTab";
-			alert.RunModal();
+			var chrome = SBApplication.FromBundleIdentifier(@"com.google.Chrome");
+			if (!chrome.IsRunning) {
+				chrome.Activate();
+			}
+
+			// TODO: Spin loop to wait it running
+			await Task.Delay(500);
+
+			if (chrome.IsRunning) {
+				var chromeWindow = chrome.ClassForScripting("window");
+				var chromeTab = chrome.ClassForScripting("tab");
+				chromeWindow.
+			}
 		}
 	}
 }
