@@ -70,6 +70,8 @@
     <Folder Include="MenuVisualizers\" />
     <Folder Include="CommandExecutors\" />
     <Folder Include="TinyIoC\" />
+    <Folder Include="SystemMenu\" />
+    <Folder Include="Messages\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -104,6 +106,11 @@
     <Compile Include="Interfaces\IApplicationCommandExecutor.cs" />
     <Compile Include="Interfaces\ISelectorCommandExecutor.cs" />
     <Compile Include="Interfaces\IShellCommandExecutor.cs" />
+    <Compile Include="SystemMenu\SystemStatusBarItem.cs" />
+    <Compile Include="Interfaces\IMenuExtra.cs" />
+    <Compile Include="Messages\AppBeforeExitMessage.cs" />
+    <Compile Include="Interfaces\IMenuExtraModule.cs" />
+    <Compile Include="MenuExtraModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

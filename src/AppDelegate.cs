@@ -15,6 +15,11 @@ namespace Actionix
 			Bootstrapper.Register();
 			Bootstrapper.Bootstrap();
 		}
+
+		public override void WillTerminate(NSNotification notification)
+		{
+			Bootstrapper.Terminate();
+		}
 	}
 }
 
