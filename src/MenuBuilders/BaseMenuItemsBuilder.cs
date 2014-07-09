@@ -11,17 +11,17 @@ namespace Actionix
 	//
 	public abstract class BaseMenuItemsBuilder : IMenuItemsBuilder
 	{
-		protected static readonly IApplicationCommandExecutor _applicationCommandExecutor;
-		protected static readonly ISelectorCommandExecutor _selectorCommandExecutor;
-		protected static readonly IShellCommandExecutor _shellCommandExecutor;
+		protected static readonly IApplicationCommandExecutor ApplicationCommandExecutor;
+		protected static readonly ISelectorCommandExecutor SelectorCommandExecutor;
+		protected static readonly IShellCommandExecutor ShellCommandExecutor;
 
 		protected abstract Dictionary<string, Action> MenuItems { get; set; }
 
 		static BaseMenuItemsBuilder()
 		{
-			_applicationCommandExecutor = TinyIoCContainer.Current.Resolve<IApplicationCommandExecutor>();
-			_selectorCommandExecutor = TinyIoCContainer.Current.Resolve<ISelectorCommandExecutor>();
-			_shellCommandExecutor = TinyIoCContainer.Current.Resolve<IShellCommandExecutor>();
+			ApplicationCommandExecutor = TinyIoCContainer.Current.Resolve<IApplicationCommandExecutor>();
+			SelectorCommandExecutor = TinyIoCContainer.Current.Resolve<ISelectorCommandExecutor>();
+			ShellCommandExecutor = TinyIoCContainer.Current.Resolve<IShellCommandExecutor>();
 		}
 
 		public virtual void AttachTo(NSMenu menu)

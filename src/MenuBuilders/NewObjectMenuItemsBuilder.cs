@@ -12,8 +12,8 @@ namespace Actionix
 	{
 		private static readonly Dictionary<string, Action> NewObjectMenuItems = new Dictionary<string, Action>()
 		{
-			{ "New File on Desktop",	() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewFileOnDesktop") },
-			{ "New Google Chrome Tab",	() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewGoogleChromeTab") },
+			{ "New File on Desktop",	() => SelectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewFileOnDesktop") },
+			{ "New Google Chrome Tab",	() => SelectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewGoogleChromeTab") },
 		};
 
 		protected override Dictionary<string, Action> MenuItems

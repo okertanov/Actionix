@@ -13,6 +13,7 @@ namespace Actionix
 		public static void Register()
 		{
 			container.Register<ITinyMessengerHub, TinyMessengerHub>().AsSingleton();
+
 			container.Register<IApplicationCommandExecutor, ApplicationCommandExecutor>().AsSingleton();
 			container.Register<ISelectorCommandExecutor, SelectorCommandExecutor>().AsSingleton();
 			container.Register<IShellCommandExecutor, ShellCommandExecutor>().AsSingleton();
@@ -22,8 +23,8 @@ namespace Actionix
 
 		public static void Bootstrap()
 		{
-			var module = container.Resolve<IMenuExtraModule>();
-			module.Run();
+			var extraModule = container.Resolve<IMenuExtraModule>();
+			extraModule.Run();
 		}
 
 		public static void Terminate()

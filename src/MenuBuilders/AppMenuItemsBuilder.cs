@@ -1,19 +1,36 @@
 ﻿using System;
 using MonoMac.AppKit;
+using System.Collections.Generic;
+using MonoMac.Foundation;
 
 namespace Actionix
 {
 	//
 	// Own app menu items
 	//
-	public class AppMenuItemsBuilder : IMenuItemsBuilder
+	public class AppMenuItemsBuilder : BaseMenuItemsBuilder
 	{
-		public void AttachTo(NSMenu menu)
+		private static readonly Dictionary<string, Action> AppMenuItems = new Dictionary<string, Action>()
 		{
-			menu.AddItem(new NSMenuItem("Quit", "", OnMenuQuit));
-		}
+			{ "Quit",	() => SelectorCommandExecutor.Execute("AppMenuItemsHandler.AppQuitCommand") },
+		};
 
-		private void OnMenuQuit(object sender, EventArgs args)
+		protected override Dictionary<string, Action> MenuItems
+		{
+			get {
+				return AppMenuItems;
+			}
+
+			set {
+				throw new NotSupportedException();
+			}
+		}
+	}
+
+	internal class AppMenuItemsHandler
+	{
+		[Export("AppQuitCommand")]
+		public static void AppQuitCommand()
 		{
 			NSApplication.SharedApplication.Terminate(NSApplication.SharedApplication);
 		}

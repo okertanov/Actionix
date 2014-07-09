@@ -12,12 +12,12 @@ namespace Actionix
 	{
 		private static readonly Dictionary<string, Action> StaticMenuItems = new Dictionary<string, Action>()
 		{
-			{ "Vim",				() => _applicationCommandExecutor.Execute("MacVim.app") },
-			{ "Terminal",			() => _applicationCommandExecutor.Execute("Terminal.app") },
-			{ "Google Chrome",		() => _applicationCommandExecutor.Execute("Google Chrome.app") },
+			{ "Vim",				() => ApplicationCommandExecutor.Execute("MacVim.app") },
+			{ "Terminal",			() => ApplicationCommandExecutor.Execute("Terminal.app") },
+			{ "Google Chrome",		() => ApplicationCommandExecutor.Execute("Google Chrome.app") },
 			{ "--------", 			null },
-			{ "System Preferences",	() => _applicationCommandExecutor.Execute("System Preferences.app") },
-			{ "Lock Screen",		() => _shellCommandExecutor.Execute("/System/Library/CoreServices/Menu%20Extras/User.menu/Contents/Resources/CGSession -suspend") }
+			{ "System Preferences",	() => ApplicationCommandExecutor.Execute("System Preferences.app") },
+			{ "Lock Screen",		() => ShellCommandExecutor.Execute("/System/Library/CoreServices/Menu%20Extras/User.menu/Contents/Resources/CGSession -suspend") }
 		};
 
 		protected override Dictionary<string, Action> MenuItems

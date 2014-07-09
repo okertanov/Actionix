@@ -8,11 +8,11 @@ namespace Actionix
 	{
 		public ActionixAppDelegate() : base()
 		{
+			Bootstrapper.Register();
 		}
 
 		public override void FinishedLaunching(NSObject notification)
 		{
-			Bootstrapper.Register();
 			Bootstrapper.Bootstrap();
 		}
 
