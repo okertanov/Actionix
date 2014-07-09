@@ -12,6 +12,7 @@ namespace Actionix
 
 		public override void FinishedLaunching(NSObject notification)
 		{
+			Bootstrapper.Register();
 			Bootstrapper.Bootstrap();
 		}
 	}

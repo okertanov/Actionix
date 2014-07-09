@@ -8,4 +8,3 @@ namespace Actionix
 		void Execute(string context);
 	}
 }
-

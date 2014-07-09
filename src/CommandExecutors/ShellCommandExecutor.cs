@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using TinyMessenger;
 
 namespace Actionix
 {
@@ -9,9 +10,9 @@ namespace Actionix
 		public string CommandLine { get; set; }
 	}
 
-	public class ShellCommandExecutor : ICommandExecutor
+	public class ShellCommandExecutor : IShellCommandExecutor
 	{
-		public ShellCommandExecutor()
+		public ShellCommandExecutor(ITinyMessengerHub hub)
 		{
 		}
 

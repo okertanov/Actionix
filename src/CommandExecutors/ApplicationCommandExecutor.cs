@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using MonoMac.AppKit;
 using System.Collections.Generic;
+using TinyMessenger;
 
 namespace Actionix
 {
@@ -11,9 +12,9 @@ namespace Actionix
 		public string BundleName { get; set; }
 	}
 
-	public class ApplicationCommandExecutor  : ICommandExecutor
+	public class ApplicationCommandExecutor  : IApplicationCommandExecutor
 	{
-		public ApplicationCommandExecutor()
+		public ApplicationCommandExecutor(ITinyMessengerHub hub)
 		{
 		}
 

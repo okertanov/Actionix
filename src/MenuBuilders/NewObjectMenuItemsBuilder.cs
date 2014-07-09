@@ -13,7 +13,6 @@ namespace Actionix
 		private static readonly Dictionary<string, Action> NewObjectMenuItems = new Dictionary<string, Action>()
 		{
 			{ "New File on Desktop",	() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewFileOnDesktop") },
-			{ "New Vim Buffer",			() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewVimBuffer") },
 			{ "New Google Chrome Tab",	() => _selectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewGoogleChromeTab") },
 		};
 
@@ -37,15 +36,6 @@ namespace Actionix
 			var alert = new NSAlert();
 			alert.MessageText = "...";
 			alert.InformativeText = "NewFileOnDesktop";
-			alert.RunModal();
-		}
-
-		[Export("NewVimBuffer")]
-		public static void NewVimBuffer()
-		{
-			var alert = new NSAlert();
-			alert.MessageText = "...";
-			alert.InformativeText = "NewVimBuffer";
 			alert.RunModal();
 		}
 

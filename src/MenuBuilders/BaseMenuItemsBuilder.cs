@@ -2,6 +2,7 @@
 using System.Linq;
 using MonoMac.AppKit;
 using System.Collections.Generic;
+using TinyIoC;
 
 namespace Actionix
 {
@@ -10,14 +11,17 @@ namespace Actionix
 	//
 	public abstract class BaseMenuItemsBuilder : IMenuItemsBuilder
 	{
-		protected static readonly ShellCommandExecutor _shellCommandExecutor = new ShellCommandExecutor();
-		protected static readonly ApplicationCommandExecutor _applicationCommandExecutor = new ApplicationCommandExecutor();
-		protected static readonly SelectorCommandExecutor _selectorCommandExecutor = new SelectorCommandExecutor();
+		protected static readonly IApplicationCommandExecutor _applicationCommandExecutor;
+		protected static readonly ISelectorCommandExecutor _selectorCommandExecutor;
+		protected static readonly IShellCommandExecutor _shellCommandExecutor;
 
 		protected abstract Dictionary<string, Action> MenuItems { get; set; }
 
-		public BaseMenuItemsBuilder() 
+		static BaseMenuItemsBuilder()
 		{
+			_applicationCommandExecutor = TinyIoCContainer.Current.Resolve<IApplicationCommandExecutor>();
+			_selectorCommandExecutor = TinyIoCContainer.Current.Resolve<ISelectorCommandExecutor>();
+			_shellCommandExecutor = TinyIoCContainer.Current.Resolve<IShellCommandExecutor>();
 		}
 
 		public virtual void AttachTo(NSMenu menu)

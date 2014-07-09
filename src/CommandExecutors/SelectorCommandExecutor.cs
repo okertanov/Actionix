@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using MonoMac.Foundation;
 using MonoMac.ObjCRuntime;
 using System.Reflection;
+using TinyMessenger;
 
 namespace Actionix
 {
@@ -14,9 +15,9 @@ namespace Actionix
 		public string SelectorName { get; set; }
 	}
 
-	public class SelectorCommandExecutor  : ICommandExecutor
+	public class SelectorCommandExecutor  : ISelectorCommandExecutor
 	{
-		public SelectorCommandExecutor()
+		public SelectorCommandExecutor(ITinyMessengerHub hub)
 		{
 		}
 

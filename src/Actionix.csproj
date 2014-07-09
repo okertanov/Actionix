@@ -95,15 +95,15 @@
     <Compile Include="MenuBuilders\NewObjectMenuItemsBuilder.cs" />
     <Compile Include="MenuBuilders\BaseMenuItemsBuilder.cs" />
     <Compile Include="CommandExecutors\SelectorCommandExecutor.cs" />
-    <Compile Include="..\submodules\TinyIoC\src\TinyIoC\ReverseTypeExtender.cs">
-      <Link>TinyIoC\src\TinyIoC\ReverseTypeExtender.cs</Link>
-    </Compile>
     <Compile Include="..\submodules\TinyIoC\src\TinyIoC\TinyIoC.cs">
       <Link>TinyIoC\src\TinyIoC\TinyIoC.cs</Link>
     </Compile>
     <Compile Include="..\submodules\TinyIoC\src\TinyIoC\TinyMessenger.cs">
       <Link>TinyIoC\src\TinyIoC\TinyMessenger.cs</Link>
     </Compile>
+    <Compile Include="Interfaces\IApplicationCommandExecutor.cs" />
+    <Compile Include="Interfaces\ISelectorCommandExecutor.cs" />
+    <Compile Include="Interfaces\IShellCommandExecutor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
