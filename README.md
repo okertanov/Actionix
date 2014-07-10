@@ -29,6 +29,7 @@ See also
 [Menulets - NEW extensive list of menu extras](http://www.menulet.me/)  
 [Lighthead Software Remember](http://lightheadsw.com/remember)  
 [Lighthead Software Caffeine](http://lightheadsw.com/caffeine/)  
+[Retina Mac Apps](http://retinamacapps.com/)  
 
 Resources
 ---------
@@ -41,4 +42,6 @@ Resources
 
 [Using Scripting Bridge](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptingBridgeConcepts/UsingScriptingBridge/UsingScriptingBridge.html)  
 [Binding a Cocoa framework for Xamarin.Mac](http://brendanzagaeski.appspot.com/xamarin/0002.html)  
+
+[Chrome Cli](https://github.com/prasmussen/chrome-cli/blob/master/chrome-cli/App.m)  
 
