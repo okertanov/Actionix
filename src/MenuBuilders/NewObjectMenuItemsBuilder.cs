@@ -46,7 +46,7 @@ namespace Actionix
 		{
 			var chromeScripting = new Bindings.ChromeScripting(@"com.google.Chrome");
 			chromeScripting.Activate();
-			chromeScripting.OpenTab(@"about:blank");
+			chromeScripting.OpenTab(String.Empty);
 		}
 	}
 }

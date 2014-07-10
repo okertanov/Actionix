@@ -28,7 +28,9 @@
     ChromeTab *tab = [[[self.chromeApplication classForScriptingClass:@"tab"] alloc] init];
     ChromeWindow *window = [self activeWindow];
     [window.tabs addObject:tab];
-    tab.URL = url;
+    if ([url length] != 0) {
+        tab.URL = url;
+    }
 }
 
 - (ChromeTab *)activeTab {
