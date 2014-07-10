@@ -19,11 +19,8 @@
 
 -(void)activate
 {
-    if (![self.chromeApplication isRunning] )
-    {
-        [self.chromeApplication activate];
-        usleep(100000);
-    }
+    [self.chromeApplication activate];
+    usleep(100000);
 }
 
 -(void)openTab:(NSString*)url
