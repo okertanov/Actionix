@@ -1,5 +1,8 @@
+.DS_Store
 src/obj
 src/bin
 *.userprefs
 *.o
 *.a
+*.dylib
+ChromeScriptingBindings.dll

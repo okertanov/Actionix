@@ -63,6 +63,9 @@
     <Reference Include="System.Core" />
     <Reference Include="MonoMac" />
     <Reference Include="System.Drawing" />
+    <Reference Include="ChromeScriptingBindings">
+      <HintPath>Sdefs\ChromeScriptingBindings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -135,4 +138,10 @@
     </BundleResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <NativeReference Include="Sdefs\libchrome-scripting.dylib">
+      <IsCxx>False</IsCxx>
+      <Kind>Dynamic</Kind>
+    </NativeReference>
+  </ItemGroup>
 </Project>

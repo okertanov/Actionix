@@ -20,7 +20,8 @@ Plug-in ideas
 
 Requirements
 ------------
-[monobjc](http://www.monobjc.net/)  
+[MonoMac](http://www.mono-project.com/MonoMac)  
+[Monobjc](http://www.monobjc.net/)  
 
 See also
 --------
@@ -39,3 +40,5 @@ Resources
 [Building NSMenuExtra - A Small Tutorial](http://cocoadevcentral.com/articles/000078.php)  
 
 [Using Scripting Bridge](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptingBridgeConcepts/UsingScriptingBridge/UsingScriptingBridge.html)  
+[Binding a Cocoa framework for Xamarin.Mac](http://brendanzagaeski.appspot.com/xamarin/0002.html)  
+

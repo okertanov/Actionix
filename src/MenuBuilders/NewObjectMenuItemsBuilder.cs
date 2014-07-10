@@ -42,20 +42,11 @@ namespace Actionix
 		}
 
 		[Export("NewGoogleChromeTab")]
-		public static async void NewGoogleChromeTab()
+		public static void NewGoogleChromeTab()
 		{
-			var chrome = SBApplication.FromBundleIdentifier(@"com.google.Chrome");
-			if (!chrome.IsRunning) {
-				chrome.Activate();
-			}
-
-			// TODO: Spin loop to wait it running
-			await Task.Delay(500);
-
-			if (chrome.IsRunning) {
-				var chromeWindow = chrome.ClassForScripting("window");
-				var chromeTab = chrome.ClassForScripting("tab");
-			}
+			var chromeScripting = new Bindings.ChromeScripting(@"com.google.Chrome");
+			chromeScripting.Activate();
+			chromeScripting.OpenTab(@"about:blank");
 		}
 	}
 }

@@ -2,9 +2,13 @@
 #import "Chrome.h"
 
 @interface ChromeScripting : NSObject
+{
+    NSString* chromeBundle;
+    ChromeApplication* chromeApplication;
+}
 
-@property (weak, nonatomic) NSString* chromeBundle;
-@property (weak, nonatomic) ChromeApplication* chromeApplication;
+@property (retain, nonatomic) NSString* chromeBundle;
+@property (retain, nonatomic) ChromeApplication* chromeApplication;
 
 -(id)initWithBundleName:(NSString *)bName;
 -(void)activate;
