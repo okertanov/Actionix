@@ -3,6 +3,9 @@ Actionix
 
 Plug-in ideas
 -------------
+ - Applications list
+ - Chrome tabs list
+ - CPU/Mem indication
  - Battery health
  - Processes list
  - Gmail API tags
@@ -10,6 +13,10 @@ Plug-in ideas
  - Gmail API tasks
  - Clipboard monitor
  - Code snippets
+ - Remote Mac Lock/Unlock from iPhone
+ - Remote app control
+ - Apps scripting
+ - Site monitoring for down, new content
 
 See also
 --------
