@@ -37,3 +37,5 @@ Resources
 
 [Menu extra](http://en.wikipedia.org/wiki/Menu_extra)  
 [Building NSMenuExtra - A Small Tutorial](http://cocoadevcentral.com/articles/000078.php)  
+
+[Using Scripting Bridge](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptingBridgeConcepts/UsingScriptingBridge/UsingScriptingBridge.html)  

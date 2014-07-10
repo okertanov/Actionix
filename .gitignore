@@ -1,3 +1,5 @@
 src/obj
 src/bin
 *.userprefs
+*.o
+*.a
