@@ -18,6 +18,10 @@ Plug-in ideas
  - Apps scripting
  - Site monitoring for down, new content
 
+Requirements
+------------
+[monobjc](http://www.monobjc.net/)  
+
 See also
 --------
 [Super OS X menubar items](http://menu.jeweledplatypus.org/)  

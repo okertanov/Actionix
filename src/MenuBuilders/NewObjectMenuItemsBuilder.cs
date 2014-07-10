@@ -55,7 +55,6 @@ namespace Actionix
 			if (chrome.IsRunning) {
 				var chromeWindow = chrome.ClassForScripting("window");
 				var chromeTab = chrome.ClassForScripting("tab");
-				chromeWindow.
 			}
 		}
 	}
