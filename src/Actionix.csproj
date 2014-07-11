@@ -26,6 +26,12 @@
     <EnablePackageSigning>false</EnablePackageSigning>
     <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>false</CreatePackage>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="make all" workingdir="${SolutionDir}/Sdefs" />
+        <Command type="AfterClean" command="make clean" workingdir="${SolutionDir}/Sdefs" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -41,6 +47,12 @@
     <CodeSigningKey>Developer ID Application</CodeSigningKey>
     <EnableCodeSigning>true</EnableCodeSigning>
     <CreatePackage>true</CreatePackage>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="BeforeBuild" command="make all" workingdir="${SolutionDir}/Sdefs" />
+        <Command type="AfterClean" command="make clean" workingdir="${SolutionDir}/Sdefs" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -115,6 +127,7 @@
     <Compile Include="Messages\AppBeforeExitMessage.cs" />
     <Compile Include="Interfaces\IMenuExtraModule.cs" />
     <Compile Include="MenuExtraModule.cs" />
+    <Compile Include="DynamicLibScriptingActivator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

@@ -6,3 +6,6 @@ src/bin
 *.a
 *.dylib
 ChromeScriptingBindings.dll
+src/Sdefs/Chrome.h
+src/Sdefs/Chrome.sdef
+src/Sdefs/ChromeScriptingBindings.cs

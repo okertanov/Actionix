@@ -12,7 +12,7 @@ namespace Actionix
 	{
 		private static readonly Dictionary<string, Action> AppMenuItems = new Dictionary<string, Action>()
 		{
-			{ "Quit",	() => SelectorCommandExecutor.Execute("AppMenuItemsHandler.AppQuitCommand") },
+			{ "Quit", () => SelectorCommandExecutor.Execute("AppMenuItemsHandler.AppQuitCommand") },
 		};
 
 		protected override Dictionary<string, Action> MenuItems
