@@ -17,13 +17,8 @@ namespace Actionix
 
 		protected override Dictionary<string, Action> MenuItems
 		{
-			get {
-				return AppMenuItems;
-			}
-
-			set {
-				throw new NotSupportedException();
-			}
+			get { return AppMenuItems; }
+			set { throw new NotSupportedException(); }
 		}
 	}
 

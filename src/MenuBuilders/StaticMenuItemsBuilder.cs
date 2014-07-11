@@ -22,13 +22,8 @@ namespace Actionix
 
 		protected override Dictionary<string, Action> MenuItems
 		{
-			get {
-				return StaticMenuItems;
-			}
-
-			set {
-				throw new NotSupportedException();
-			}
+			get { return StaticMenuItems; }
+			set { throw new NotSupportedException(); }
 		}
 	}
 }

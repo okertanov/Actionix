@@ -16,13 +16,8 @@ namespace Actionix
 
 		protected override Dictionary<string, Action> MenuItems
 		{
-			get {
-				return SeparatorMenuItems;
-			}
-
-			set {
-				throw new NotSupportedException();
-			}
+			get { return SeparatorMenuItems; }
+			set { throw new NotSupportedException(); }
 		}
 	}
 }
