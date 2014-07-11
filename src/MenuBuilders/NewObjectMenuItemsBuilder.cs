@@ -30,10 +30,7 @@ namespace Actionix
 		[Export("NewFileOnDesktop")]
 		public static void NewFileOnDesktop()
 		{
-			var alert = new NSAlert();
-			alert.MessageText = "...";
-			alert.InformativeText = "NewFileOnDesktop";
-			alert.RunModal();
+			FileSystemHelper helper = new FileSystemHelper();
 		}
 
 		[Export("NewGoogleChromeTab")]

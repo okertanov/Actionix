@@ -90,6 +90,7 @@
     <Folder Include="Messages\" />
     <Folder Include="EventMonitors\" />
     <Folder Include="Scripting\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="SystemMenu\MenuExtraModule.cs" />
     <Compile Include="MenuVisualizers\BatteryMenuItemVisualizer.cs" />
     <Compile Include="MenuVisualizers\PerformanceMenuItemVisualizer.cs" />
+    <Compile Include="Helpers\FileSystemHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
