@@ -20,6 +20,7 @@ Plug-in ideas
 
 Requirements
 ------------
+[Objective Sharpie](http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/)  
 [MonoMac](http://www.mono-project.com/MonoMac)  
 [Monobjc](http://www.monobjc.net/)  
 

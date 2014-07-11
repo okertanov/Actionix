@@ -1,17 +1,24 @@
 #import "Chrome.h"
 #import "ChromeScripting.h"
 
+@interface ChromeScripting()
+
+@property (retain, nonatomic) NSString* chromeBundle;
+@property (retain, nonatomic) ChromeApplication* chromeApplication;
+
+@end
+
 @implementation ChromeScripting
 
 @synthesize chromeBundle;
 @synthesize chromeApplication;
 
--(id)initWithBundleName:(NSString *)bName
+-(id)initWithBundleName:(NSString *)bundleName
 {
     self = [super init];
     if (self)
     {
-        self.chromeBundle = bName;
+        self.chromeBundle = bundleName;
         self.chromeApplication = [SBApplication applicationWithBundleIdentifier:self.chromeBundle];
     }
     return self;

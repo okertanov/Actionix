@@ -7,15 +7,9 @@
     ChromeApplication* chromeApplication;
 }
 
-@property (retain, nonatomic) NSString* chromeBundle;
-@property (retain, nonatomic) ChromeApplication* chromeApplication;
-
--(id)initWithBundleName:(NSString *)bName;
+-(id)initWithBundleName:(NSString *)bundleName;
 -(void)activate;
 -(void)openTab:(NSString*)url;
-
-- (ChromeTab *)activeTab;
-- (ChromeWindow *)activeWindow;
 
 @end
 
