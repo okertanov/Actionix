@@ -88,6 +88,8 @@
     <Folder Include="TinyIoC\" />
     <Folder Include="SystemMenu\" />
     <Folder Include="Messages\" />
+    <Folder Include="EventMonitors\" />
+    <Folder Include="Scripting\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
@@ -104,8 +106,6 @@
     <Compile Include="MenuVisualizers\IconMenuVisualizer.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="MenuBuilders\DirectoryMenuItemsBuilder.cs" />
-    <Compile Include="KeyCodesOSX.cs" />
-    <Compile Include="GlobalShortcutKeyMonitor.cs" />
     <Compile Include="Interfaces\ICommandExecutor.cs" />
     <Compile Include="CommandExecutors\ShellCommandExecutor.cs" />
     <Compile Include="Interfaces\ICommandContext.cs" />
@@ -126,8 +126,10 @@
     <Compile Include="Interfaces\IMenuExtra.cs" />
     <Compile Include="Messages\AppBeforeExitMessage.cs" />
     <Compile Include="Interfaces\IMenuExtraModule.cs" />
-    <Compile Include="MenuExtraModule.cs" />
-    <Compile Include="DynamicLibScriptingActivator.cs" />
+    <Compile Include="EventMonitors\GlobalShortcutKeyMonitor.cs" />
+    <Compile Include="Scripting\DynamicLibScriptingActivator.cs" />
+    <Compile Include="EventMonitors\KeyCodesOSX.cs" />
+    <Compile Include="SystemMenu\MenuExtraModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
