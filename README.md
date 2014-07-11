@@ -41,6 +41,8 @@ Resources
 [Building NSMenuExtra - A Small Tutorial](http://cocoadevcentral.com/articles/000078.php)  
 
 [Using Scripting Bridge](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ScriptingBridgeConcepts/UsingScriptingBridge/UsingScriptingBridge.html)  
+[MonoMac: Binding Objective-C Types](http://www.mono-project.com/MonoMac/Documentation/Binding_New_Objective-C_Types)  
+[Xamarin: Binding Objective-C](http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/)  
 [Binding a Cocoa framework for Xamarin.Mac](http://brendanzagaeski.appspot.com/xamarin/0002.html)  
 
 [Chrome Cli](https://github.com/prasmussen/chrome-cli/blob/master/chrome-cli/App.m)  
