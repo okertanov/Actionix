@@ -8,7 +8,8 @@ namespace Actionix
 	//
 	public class MenuExtraModule : IMenuExtraModule
 	{
-		private readonly SystemStatusBarItem _systemStatusBarItem;
+		private SystemStatusBarItem _systemStatusBarItem;
+		private GlobalShortcutKeyMonitor _globalShortcutKeyMonitor;
 		private readonly ITinyMessengerHub _hub;
 		private TinyMessageSubscriptionToken _appBeforeExitMessageToken;
 
@@ -38,7 +39,7 @@ namespace Actionix
 			//
 			// System Preferences > Security & Privacy > Privacy > Accessibility
 			//
-			var globalShortcutKeyMonitor = new GlobalShortcutKeyMonitor((ev) => {
+			_globalShortcutKeyMonitor = new GlobalShortcutKeyMonitor((ev) => {
 				_systemStatusBarItem.ShowMenuAt(ev.LocationInWindow);
 			});
 
@@ -46,8 +47,7 @@ namespace Actionix
 			// Events subscription
 			//
 			_appBeforeExitMessageToken = _hub.Subscribe<AppBeforeExitMessage>(m => {
-				_systemStatusBarItem.Dispose();
-				_systemStatusBarItem = null;
+				Cleanup();
 			});
 
 			//
@@ -68,6 +68,20 @@ namespace Actionix
 
 		public void Dispose()
 		{
+			Cleanup();
+		}
+
+		private void Cleanup()
+		{
+			if (_appBeforeExitMessageToken != null) {
+				_hub.Unsubscribe<AppBeforeExitMessage>(_appBeforeExitMessageToken);
+				_appBeforeExitMessageToken = null;
+			}
+
+			if (_globalShortcutKeyMonitor != null) {
+				_globalShortcutKeyMonitor.Dispose();
+				_globalShortcutKeyMonitor = null;
+			}
 		}
 	}
 }

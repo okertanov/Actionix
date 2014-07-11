@@ -41,6 +41,7 @@ namespace Actionix
 			if (_handle != IntPtr.Zero)
 			{
 				Dlfcn.dlclose(_handle);
+				_handle = IntPtr.Zero;
 			}
 		}
 
