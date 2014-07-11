@@ -130,6 +130,8 @@
     <Compile Include="Scripting\DynamicLibScriptingActivator.cs" />
     <Compile Include="EventMonitors\KeyCodesOSX.cs" />
     <Compile Include="SystemMenu\MenuExtraModule.cs" />
+    <Compile Include="MenuVisualizers\BatteryMenuItemVisualizer.cs" />
+    <Compile Include="MenuVisualizers\PerformanceMenuItemVisualizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

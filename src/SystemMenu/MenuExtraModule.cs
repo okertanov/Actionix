@@ -47,6 +47,9 @@ namespace Actionix
 			// Events subscription
 			//
 			_appBeforeExitMessageToken = _hub.Subscribe<AppBeforeExitMessage>(m => {
+				_systemStatusBarItem.Dispose();
+				_systemStatusBarItem = null;
+
 				Cleanup();
 			});
 
@@ -73,12 +76,20 @@ namespace Actionix
 
 		private void Cleanup()
 		{
-			if (_appBeforeExitMessageToken != null) {
+			if (_appBeforeExitMessageToken != null)
+			{
 				_hub.Unsubscribe<AppBeforeExitMessage>(_appBeforeExitMessageToken);
 				_appBeforeExitMessageToken = null;
 			}
 
-			if (_globalShortcutKeyMonitor != null) {
+			if (_systemStatusBarItem != null)
+			{
+				_systemStatusBarItem.Dispose();
+				_systemStatusBarItem = null;
+			}
+
+			if (_globalShortcutKeyMonitor != null)
+			{
 				_globalShortcutKeyMonitor.Dispose();
 				_globalShortcutKeyMonitor = null;
 			}

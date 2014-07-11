@@ -1,11 +1,12 @@
 ﻿using System;
 using MonoMac.AppKit;
+using MonoMac.Foundation;
 
 namespace Actionix
 {
 	public interface IMenuVisualizer
 	{
-		void AttachTo(NSStatusItem statusItem);
+		void AttachTo(NSObject item);
 	}
 }
 
