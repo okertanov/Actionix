@@ -52,12 +52,7 @@ namespace Actionix
 					fileName = String.Format(nameMask, uniquePartGenerator.Current);
 					filePath = Path.Combine(path, fileName);
 
-					if (!File.Exists(filePath))
-					{
-						break;
-					}
-
-					if (count++ > MaxUniqueFsNameProbes)
+					if (!File.Exists(filePath) || count++ > MaxUniqueFsNameProbes)
 					{
 						break;
 					}

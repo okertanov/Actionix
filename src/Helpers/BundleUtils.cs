@@ -24,7 +24,7 @@ namespace Actionix
 			var iconFullName = (plistDict.ValueForKey(new NSString("CFBundleIconFile")) as NSString).ToString();
 			var iconName = Path.GetFileNameWithoutExtension(iconFullName);
 			var iconExtension = Path.GetExtension(iconFullName);
-			if (String.IsNullOrWhiteSpace (iconExtension)) {
+			if (String.IsNullOrWhiteSpace(iconExtension)) {
 				iconExtension = StdIconExtension;
 			}
 			var iconPath = bundle.PathForResource(iconName, iconExtension);

@@ -12,7 +12,7 @@ namespace Actionix
 		public string BundleName { get; set; }
 	}
 
-	public class ApplicationCommandExecutor  : IApplicationCommandExecutor
+	public class ApplicationCommandExecutor : IApplicationCommandExecutor
 	{
 		public ApplicationCommandExecutor(ITinyMessengerHub hub)
 		{
