@@ -9,6 +9,7 @@ namespace Actionix
 
 		public const string StatusBarIconName = "atom-20x20";
 		public static readonly SizeF StatusBarIconSize = new SizeF(24, 24);
+		public static readonly SizeF MenuItemIconSize = new SizeF(19, 19);
 
 		public const string ChromeScriptingDlybName = "libchrome-scripting.dylib";
 	}

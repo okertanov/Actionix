@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Actionix
 {
-	public class BundleUtils
+	public static class BundleUtils
 	{
 		private const string StdIconExtension = "icns";
 

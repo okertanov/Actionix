@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using MonoMac.Foundation;
 
 namespace Actionix
 {
@@ -11,12 +12,17 @@ namespace Actionix
 		public FileSystemHelperException(string what, Exception inner) : base(what, inner) { }
 	}
 
-	public class FileSystemHelper
+	public static class FileSystemHelper
 	{
 		const int MaxUniqueFsNameProbes = 1 << 10;
 
-		public FileSystemHelper()
-		{
+		public static string Desktop {
+			get
+			{
+				var nsDesktopPath = new NSString("~/Desktop");
+				var expandedDesktopPath = nsDesktopPath.ExpandTildeInPath().ToString();
+				return expandedDesktopPath;
+			}
 		}
 
 		public static void CreateNewFile(string name)
@@ -36,6 +42,11 @@ namespace Actionix
 				{
 					fileName = String.Format(nameMask, uniquePartGenerator.Current);
 					filePath = Path.Combine(path, fileName);
+
+					if (!File.Exists(filePath))
+					{
+						break;
+					}
 
 					if (count++ > MaxUniqueFsNameProbes)
 					{

@@ -36,7 +36,7 @@ namespace Actionix
 				if(!String.IsNullOrWhiteSpace(item.Icon))
 				{
 					var appIcon = new NSImage(item.Icon);
-					appIcon.Size = new SizeF(19f, 19f);
+					appIcon.Size = SharedSettings.MenuItemIconSize;
 					menuItem.Image = appIcon;
 				}
 				menu.AddItem(menuItem);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MonoMac.Foundation;
 using MonoMac.ScriptingBridge;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Actionix
 {
@@ -27,10 +28,19 @@ namespace Actionix
 
 	internal class NewObjectMenuItemsHandler
 	{
+		private static IEnumerator<int> CreateIntegralSequenceEnumerator(int start)
+		{
+			return Enumerable.Range(start, int.MaxValue).GetEnumerator();
+		}
+
 		[Export("NewFileOnDesktop")]
 		public static void NewFileOnDesktop()
 		{
-			FileSystemHelper helper = new FileSystemHelper();
+			var fileName = FileSystemHelper.GenerateNonExistentFileNameAt<int>(FileSystemHelper.Desktop, "New File {0}.txt", CreateIntegralSequenceEnumerator(1));
+			if (!String.IsNullOrWhiteSpace(fileName))
+			{
+				FileSystemHelper.CreateNewFile(fileName);
+			}
 		}
 
 		[Export("NewGoogleChromeTab")]
