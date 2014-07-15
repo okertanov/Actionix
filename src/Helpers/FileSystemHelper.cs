@@ -16,6 +16,15 @@ namespace Actionix
 	{
 		const int MaxUniqueFsNameProbes = 1 << 10;
 
+		public static string Home {
+			get
+			{
+				var nsDesktopPath = new NSString("~/");
+				var expandedDesktopPath = nsDesktopPath.ExpandTildeInPath().ToString();
+				return expandedDesktopPath;
+			}
+		}
+
 		public static string Desktop {
 			get
 			{
