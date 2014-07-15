@@ -10,17 +10,17 @@ namespace Actionix
 	//
 	public class StaticMenuItemsBuilder : BaseMenuItemsBuilder
 	{
-		private static readonly Dictionary<string, Action> StaticMenuItems = new Dictionary<string, Action>()
+		private static readonly IList<IMenuItem> StaticMenuItems = new List<IMenuItem>()
 		{
-			{ "Vim",				() => ApplicationCommandExecutor.Execute("MacVim.app") },
-			{ "Terminal",			() => ApplicationCommandExecutor.Execute("Terminal.app") },
-			{ "Google Chrome",		() => ApplicationCommandExecutor.Execute("Google Chrome.app") },
-			{ "--------", 			null },
-			{ "System Preferences",	() => ApplicationCommandExecutor.Execute("System Preferences.app") },
-			{ "Lock Screen",		() => ShellCommandExecutor.Execute("/System/Library/CoreServices/Menu%20Extras/User.menu/Contents/Resources/CGSession -suspend") }
+			new MenuItem("Vim",					() => ApplicationCommandExecutor.Execute("MacVim.app"), BundleUtils.ApplicationIconFromBundle("/Applications/MacVim.app")),
+			new MenuItem("Terminal",			() => ApplicationCommandExecutor.Execute("Terminal.app"), BundleUtils.ApplicationIconFromBundle("/Applications/Utilities/Terminal.app")),
+			new MenuItem("Google Chrome",		() => ApplicationCommandExecutor.Execute("Google Chrome.app"), BundleUtils.ApplicationIconFromBundle("/Applications/Google Chrome.app")),
+			new MenuItem("--------", 			null),
+			new MenuItem("System Preferences",	() => ApplicationCommandExecutor.Execute("System Preferences.app")),
+			new MenuItem("Lock Screen",			() => ShellCommandExecutor.Execute("/System/Library/CoreServices/Menu%20Extras/User.menu/Contents/Resources/CGSession -suspend"))
 		};
 
-		protected override Dictionary<string, Action> MenuItems
+		protected override IList<IMenuItem> MenuItems
 		{
 			get { return StaticMenuItems; }
 			set { throw new NotSupportedException(); }

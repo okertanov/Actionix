@@ -9,12 +9,12 @@ namespace Actionix
 	//
 	public class SeparatorMenuItemsBuilder : BaseMenuItemsBuilder
 	{
-		private static readonly Dictionary<string, Action> SeparatorMenuItems = new Dictionary<string, Action>()
+		private static readonly IList<IMenuItem> SeparatorMenuItems = new List<IMenuItem>()
 		{
-			{ "--------", null },
+			new MenuItem("--------", null)
 		};
 
-		protected override Dictionary<string, Action> MenuItems
+		protected override IList<IMenuItem> MenuItems
 		{
 			get { return SeparatorMenuItems; }
 			set { throw new NotSupportedException(); }

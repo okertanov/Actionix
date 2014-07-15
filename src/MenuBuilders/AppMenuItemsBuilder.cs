@@ -10,12 +10,12 @@ namespace Actionix
 	//
 	public class AppMenuItemsBuilder : BaseMenuItemsBuilder
 	{
-		private static readonly Dictionary<string, Action> AppMenuItems = new Dictionary<string, Action>()
+		private static readonly IList<IMenuItem> AppMenuItems = new List<IMenuItem> ()
 		{
-			{ "Quit", () => SelectorCommandExecutor.Execute("AppMenuItemsHandler.AppQuitCommand") },
+			new MenuItem("Quit", () => SelectorCommandExecutor.Execute("AppMenuItemsHandler.AppQuitCommand")),
 		};
 
-		protected override Dictionary<string, Action> MenuItems
+		protected override IList<IMenuItem> MenuItems
 		{
 			get { return AppMenuItems; }
 			set { throw new NotSupportedException(); }

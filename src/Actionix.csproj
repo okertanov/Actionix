@@ -134,6 +134,9 @@
     <Compile Include="MenuVisualizers\BatteryMenuItemVisualizer.cs" />
     <Compile Include="MenuVisualizers\PerformanceMenuItemVisualizer.cs" />
     <Compile Include="Helpers\FileSystemHelper.cs" />
+    <Compile Include="Helpers\BundleUtils.cs" />
+    <Compile Include="Interfaces\IMenuItem.cs" />
+    <Compile Include="MenuBuilders\MenuItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

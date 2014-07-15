@@ -3,6 +3,8 @@ using System.Linq;
 using MonoMac.AppKit;
 using System.Collections.Generic;
 using TinyIoC;
+using System.Collections;
+using System.Drawing;
 
 namespace Actionix
 {
@@ -15,7 +17,7 @@ namespace Actionix
 		protected static readonly ISelectorCommandExecutor SelectorCommandExecutor;
 		protected static readonly IShellCommandExecutor ShellCommandExecutor;
 
-		protected abstract Dictionary<string, Action> MenuItems { get; set; }
+		protected abstract IList<IMenuItem> MenuItems { get; set; }
 
 		static BaseMenuItemsBuilder()
 		{
@@ -26,20 +28,28 @@ namespace Actionix
 
 		public virtual void AttachTo(NSMenu menu)
 		{
-			MenuItems.ToList().ForEach(item => menu.AddItem(
-				item.Key.StartsWith("-") ?
+			MenuItems.ToList().ForEach(item => {
+
+				var menuItem = item.Title.StartsWith("-") ?
 					NSMenuItem.SeparatorItem :
-					new NSMenuItem(item.Key, "", OnMenu))
-			);
+					new NSMenuItem(item.Title, "", OnMenu);
+				if(!String.IsNullOrWhiteSpace(item.Icon))
+				{
+					var appIcon = new NSImage(item.Icon);
+					appIcon.Size = new SizeF(19f, 19f);
+					menuItem.Image = appIcon;
+				}
+				menu.AddItem(menuItem);
+			});
 		}
 
 		protected virtual void OnMenu(object sender, EventArgs args)
 		{
-			var item = sender as NSMenuItem;
+			var menuItem = sender as NSMenuItem;
 
-			if (item != null)
+			if (menuItem != null)
 			{
-				var action = MenuItems[item.Title];
+				var action = MenuItems.Single(i => i.Title == menuItem.Title).Action;
 				if (action != null)
 				{
 					action.Invoke();
