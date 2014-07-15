@@ -3,15 +3,16 @@ using MonoMac.Foundation;
 
 namespace Actionix
 {
-	public class BatteryMenuItemVisualizer : IMenuVisualizer
-	{
-		public BatteryMenuItemVisualizer()
-		{
-		}
+    // See http://stackoverflow.com/questions/4533816/gap-above-nsmenuitem-custom-view
+    public class BatteryMenuItemVisualizer : IMenuVisualizer
+    {
+        public BatteryMenuItemVisualizer()
+        {
+        }
 
-		public void AttachTo(NSObject item)
-		{
-		}
-	}
+        public void AttachTo(NSObject item)
+        {
+        }
+    }
 }
 
