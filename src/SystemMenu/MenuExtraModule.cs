@@ -1,5 +1,6 @@
 ﻿using System;
 using TinyMessenger;
+using MonoMac.AppKit;
 
 namespace Actionix
 {
@@ -10,6 +11,7 @@ namespace Actionix
 	{
 		private SystemStatusBarItem _systemStatusBarItem;
 		private GlobalShortcutKeyMonitor _globalShortcutKeyMonitor;
+		private PeriodicEventMonitor _periodicEventMonitor;
 		private readonly ITinyMessengerHub _hub;
 		private TinyMessageSubscriptionToken _appBeforeExitMessageToken;
 
@@ -20,7 +22,7 @@ namespace Actionix
 			//
 			// Status bar menu
 			//
-			var _systemStatusBarItem = new SystemStatusBarItem();
+			var _systemStatusBarItem = new SystemStatusBarItem(hub);
 
 			var iconMenuVisualizer = new IconMenuVisualizer();
 			_systemStatusBarItem.AssignMenuVisualizer(iconMenuVisualizer);
@@ -40,11 +42,20 @@ namespace Actionix
 			// System Preferences > Security & Privacy > Privacy > Accessibility
 			//
 			_globalShortcutKeyMonitor = new GlobalShortcutKeyMonitor((ev) => {
-				_systemStatusBarItem.ShowMenuAt(ev.LocationInWindow);
+				var msg = new ShowMenuMessage(NSApplication.SharedApplication, ev);
+				hub.PublishAsync(msg);
 			});
 
 			//
-			// Events subscription
+			// Periodic Events Handler
+			//
+			_periodicEventMonitor = new PeriodicEventMonitor((ev) => {
+				var msg = new PeriodicEventMessage(NSApplication.SharedApplication, ev);
+				hub.PublishAsync(msg);
+			});
+
+			//
+			// Module events subscription
 			//
 			_appBeforeExitMessageToken = _hub.Subscribe<AppBeforeExitMessage>(m => {
 				_systemStatusBarItem.Dispose();
@@ -52,17 +63,6 @@ namespace Actionix
 
 				Cleanup();
 			});
-
-			//
-			// Periodic ticker
-			// See https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html
-			// NSEvent.StartPeriodicEventsAfterDelay
-			//
-
-			/*var alert = new NSAlert();
-			alert.MessageText = "Hi!";
-			alert.InformativeText = "...";
-			alert.RunModal();*/
 		}
 
 		public void Run()
@@ -92,6 +92,12 @@ namespace Actionix
 			{
 				_globalShortcutKeyMonitor.Dispose();
 				_globalShortcutKeyMonitor = null;
+			}
+
+			if (_periodicEventMonitor != null)
+			{
+				_periodicEventMonitor.Dispose();
+				_periodicEventMonitor = null;
 			}
 		}
 	}

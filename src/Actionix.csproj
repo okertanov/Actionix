@@ -137,6 +137,11 @@
     <Compile Include="Helpers\BundleUtils.cs" />
     <Compile Include="Interfaces\IMenuItem.cs" />
     <Compile Include="MenuBuilders\MenuItem.cs" />
+    <Compile Include="Interfaces\IEventMonitor.cs" />
+    <Compile Include="EventMonitors\PeriodicEventMonitor.cs" />
+    <Compile Include="Helpers\MessageBoxHelper.cs" />
+    <Compile Include="Messages\PeriodicEventMessage.cs" />
+    <Compile Include="Messages\ShowMenuMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

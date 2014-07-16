@@ -4,7 +4,7 @@ using MonoMac.Foundation;
 
 namespace Actionix
 {
-	public class GlobalShortcutKeyMonitor
+	public class GlobalShortcutKeyMonitor : IEventMonitor
 	{
 		private NSObject _globalHandler;
 		private NSObject _localHandler;
