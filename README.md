@@ -18,6 +18,12 @@ Plug-in ideas
  - Apps scripting
  - Site monitoring for down, new content
 
+TODO
+----
+ - To create installation package
+ - To investigate Menu Extra bundle
+ - To investigate Standalone Update process
+
 Requirements
 ------------
 [Objective Sharpie](http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/)  
