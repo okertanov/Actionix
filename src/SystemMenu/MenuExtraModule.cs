@@ -17,6 +17,9 @@ namespace Actionix
 
 		public MenuExtraModule(ITinyMessengerHub hub, ISystemStatusBarItem systemStatusBarItem, IGlobalShortcutKeyMonitor globalShortcutKeyMonitor, IPeriodicEventMonitor periodicEventMonitor)
 		{
+			//
+			// Initialize member fields via IoC
+			//
 			_hub = hub;
 			_globalShortcutKeyMonitor = globalShortcutKeyMonitor;
 			_periodicEventMonitor = periodicEventMonitor;
