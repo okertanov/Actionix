@@ -23,6 +23,10 @@ TODO
  - To create installation package
  - To investigate Menu Extra bundle
  - To investigate Standalone Update process
+ - Enabled, visible Menu item conditions
+ - Preferences on Alt-Click
+ - Preferences tabs with Active menu builders, not installed apps, etc
+ - Application is not installed, prompt to install in the Preferences panel
 
 Requirements
 ------------
