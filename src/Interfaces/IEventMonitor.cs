@@ -1,11 +1,11 @@
 ﻿using System;
+using MonoMac.AppKit;
 
 namespace Actionix
 {
 	public interface IEventMonitor : IDisposable
 	{
-		void Install();
-		void Uninstall();
+		void Activate(Action<NSEvent> onEventMonitorAction);
 	}
 }
 

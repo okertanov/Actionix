@@ -9,21 +9,22 @@ namespace Actionix
 	//
 	public class MenuExtraModule : IMenuExtraModule
 	{
-		private SystemStatusBarItem _systemStatusBarItem;
-		private GlobalShortcutKeyMonitor _globalShortcutKeyMonitor;
-		private PeriodicEventMonitor _periodicEventMonitor;
+		private ISystemStatusBarItem _systemStatusBarItem;
+		private IGlobalShortcutKeyMonitor _globalShortcutKeyMonitor;
+		private IPeriodicEventMonitor _periodicEventMonitor;
 		private readonly ITinyMessengerHub _hub;
 		private TinyMessageSubscriptionToken _appBeforeExitMessageToken;
 
-		public MenuExtraModule(ITinyMessengerHub hub)
+		public MenuExtraModule(ITinyMessengerHub hub, ISystemStatusBarItem systemStatusBarItem, IGlobalShortcutKeyMonitor globalShortcutKeyMonitor, IPeriodicEventMonitor periodicEventMonitor)
 		{
 			_hub = hub;
+			_globalShortcutKeyMonitor = globalShortcutKeyMonitor;
+			_periodicEventMonitor = periodicEventMonitor;
+			_systemStatusBarItem = systemStatusBarItem;
 
 			//
-			// Status bar menu
+			// Init Status bar menu
 			//
-			var _systemStatusBarItem = new SystemStatusBarItem(hub);
-
 			var iconMenuVisualizer = new IconMenuVisualizer();
 			_systemStatusBarItem.AssignMenuVisualizer(iconMenuVisualizer);
 
@@ -41,7 +42,7 @@ namespace Actionix
 			//
 			// System Preferences > Security & Privacy > Privacy > Accessibility
 			//
-			_globalShortcutKeyMonitor = new GlobalShortcutKeyMonitor((ev) => {
+			_globalShortcutKeyMonitor.Activate((ev) => {
 				var msg = new ShowMenuMessage(NSApplication.SharedApplication, ev);
 				hub.PublishAsync(msg);
 			});
@@ -49,7 +50,7 @@ namespace Actionix
 			//
 			// Periodic Events Handler
 			//
-			_periodicEventMonitor = new PeriodicEventMonitor((ev) => {
+			_periodicEventMonitor.Activate((ev) => {
 				var msg = new PeriodicEventMessage(NSApplication.SharedApplication, ev);
 				hub.PublishAsync(msg);
 			});
@@ -58,9 +59,6 @@ namespace Actionix
 			// Module events subscription
 			//
 			_appBeforeExitMessageToken = _hub.Subscribe<AppBeforeExitMessage>(m => {
-				_systemStatusBarItem.Dispose();
-				_systemStatusBarItem = null;
-
 				Cleanup();
 			});
 		}

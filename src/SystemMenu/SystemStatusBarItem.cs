@@ -5,7 +5,7 @@ using TinyMessenger;
 
 namespace Actionix
 {
-	public class SystemStatusBarItem : IMenuExtra
+	public class SystemStatusBarItem : ISystemStatusBarItem
 	{
 		private readonly NSStatusItem _systemStatusBarItem;
 
@@ -23,14 +23,14 @@ namespace Actionix
 			_periodicEventMessageToken = _hub.Subscribe<PeriodicEventMessage>(PeriodicEventMessageHandler);
 		}
 
-		public void AssignMenuVisualizer(IMenuVisualizer menuVisualizer)
-		{
-			menuVisualizer.AttachTo(_systemStatusBarItem);
-		}
-
 		public void AssignMenuBuilder(IMenuBuilder menuBuilder)
 		{
 			_systemStatusBarItem.Menu = menuBuilder.Build();
+		}
+
+		public void AssignMenuVisualizer(IMenuVisualizer menuVisualizer)
+		{
+			menuVisualizer.AttachTo(_systemStatusBarItem);
 		}
 
 		private void ShowMenuAt(PointF pointAt)

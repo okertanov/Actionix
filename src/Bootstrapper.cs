@@ -18,6 +18,11 @@ namespace Actionix
 			Container.Register<ISelectorCommandExecutor, SelectorCommandExecutor>().AsSingleton();
 			Container.Register<IShellCommandExecutor, ShellCommandExecutor>().AsSingleton();
 
+
+			Container.Register<IGlobalShortcutKeyMonitor, GlobalShortcutKeyMonitor>().AsSingleton();
+			Container.Register<IPeriodicEventMonitor, PeriodicEventMonitor>().AsSingleton();
+
+			Container.Register<ISystemStatusBarItem, SystemStatusBarItem>().AsSingleton();
 			Container.Register<IMenuExtraModule, MenuExtraModule>().AsSingleton();
 		}
 

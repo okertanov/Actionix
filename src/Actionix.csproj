@@ -142,6 +142,9 @@
     <Compile Include="Helpers\MessageBoxHelper.cs" />
     <Compile Include="Messages\PeriodicEventMessage.cs" />
     <Compile Include="Messages\ShowMenuMessage.cs" />
+    <Compile Include="Interfaces\ISystemStatusBarItem.cs" />
+    <Compile Include="Interfaces\IGlobalShortcutKeyMonitor.cs" />
+    <Compile Include="Interfaces\IPeriodicEventMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

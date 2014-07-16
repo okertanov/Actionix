@@ -4,17 +4,25 @@ using MonoMac.Foundation;
 
 namespace Actionix
 {
-	public class GlobalShortcutKeyMonitor : IEventMonitor
+	public class GlobalShortcutKeyMonitor : IGlobalShortcutKeyMonitor
 	{
 		private NSObject _globalHandler;
 		private NSObject _localHandler;
 		private Action<NSEvent> _onGlobalShortcutKeyAction;
 
-		public GlobalShortcutKeyMonitor(Action<NSEvent> onGlobalShortcutKeyAction)
-		{
-			_onGlobalShortcutKeyAction = onGlobalShortcutKeyAction;
+		private readonly object _lockObject = new object();
 
+		public GlobalShortcutKeyMonitor()
+		{
 			Install();
+		}
+
+		public void Activate(Action<NSEvent> onGlobalShortcutKeyAction)
+		{
+			lock (_lockObject)
+			{
+				_onGlobalShortcutKeyAction = onGlobalShortcutKeyAction;
+			}
 		}
 
 		public void Install()
@@ -25,6 +33,11 @@ namespace Actionix
 
 		public void Uninstall()
 		{
+			lock (_lockObject)
+			{
+				_onGlobalShortcutKeyAction = null;
+			}
+
 			NSEvent.RemoveMonitor(_localHandler);
 			NSEvent.RemoveMonitor(_globalHandler);
 		}
