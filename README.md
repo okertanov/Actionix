@@ -23,6 +23,7 @@ TODO
  - To create installation package
  - To investigate Menu Extra bundle
  - To investigate Standalone Update process
+ - Modeless popup, like tool window
  - Enabled, visible Menu item conditions
  - Preferences on Alt-Click
  - Preferences tabs with Active menu builders, not installed apps, etc
