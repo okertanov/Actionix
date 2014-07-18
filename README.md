@@ -59,3 +59,13 @@ Resources
 
 [Chrome Cli](https://github.com/prasmussen/chrome-cli/blob/master/chrome-cli/App.m)  
 
+### OSX Battery Status API
+http://stackoverflow.com/questions/1432792/how-to-get-the-battery-life-of-mac-os-x-macbooks-programatically  
+http://stackoverflow.com/questions/20585735/how-do-i-get-battery-charge-cycles-from-a-connected-ios-device  
+https://developer.apple.com/library/ios/technotes/tn2169/_index.html  
+https://github.com/codler/Battery-Time-Remaining/tree/master/Battery%20Time%20Remaining  
+https://media.blackhat.com/bh-us-11/Miller/BH_US_11_Miller_Battery_Firmware_Public_WP.pdf  
+http://imars.info/getting-battery-related-information-in-cocoa-osx-development/  
+http://benohead.com/mac-os-x-getting-power-source-information/  
+http://forums.macrumors.com/showthread.php?t=1304554  
+https://developer.apple.com/library/mac/samplecode/BatteryInfo/Introduction/Intro.html#//apple_ref/doc/uid/DTS40009313  
