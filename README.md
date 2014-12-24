@@ -29,6 +29,9 @@ TODO
  - Preferences tabs with Active menu builders, not installed apps, etc
  - Application is not installed, prompt to install in the Preferences panel
 
+ - kbd shortcuts handler with IOC registermany
+ - detect chrome installed
+
 Requirements
 ------------
 [Objective Sharpie](http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/)  
