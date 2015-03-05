@@ -1,6 +1,12 @@
 Actionix
 ========
 
+OS Specific
+-----------
+
+    /System/Library/CoreServices/Menu Extras
+
+
 Plug-in ideas
 -------------
  - Applications list
