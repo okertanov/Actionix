@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-SCRIPT_PATH=$(cd "$(dirname "$0")"; pwd)
-/Library/Frameworks/Mono.framework/Versions/Current/bin/mono --debug $MONO_OPTIONS $SCRIPT_PATH/lib/Sharpie.exe "$@"
