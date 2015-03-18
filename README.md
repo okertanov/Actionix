@@ -38,6 +38,8 @@ TODO
  - kbd shortcuts handler with IOC registermany
  - detect chrome installed
 
+ - Applications Menu: http://stackoverflow.com/questions/24280878/how-can-i-get-list-of-installed-applications-on-mac-os-x-programmetically
+
 Requirements
 ------------
 [Objective Sharpie](http://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/objective_sharpie/)  
