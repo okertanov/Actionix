@@ -6,7 +6,7 @@ SDEF=sdef
 SDP=sdp
 BM=mono ../../tools/MonoMac/bmac.exe
 BM_BL=../../tools/MonoMac/MonoMac.dll
-SHARPIE=../../tools/ObjectiveSharpie/sharpie
+SHARPIE=../../tools/ObjectiveSharpie.framework/Commands/sharpie
 
 CFLAGS=-O2 -m32 -Wno-ignored-attributes -ObjC
 
@@ -18,7 +18,11 @@ ChromeScriptingBindings.dll: ChromeScriptingBindings.cs
 	$(BM) -d=MONOMAC -r=System.Drawing.dll --baselib=$(BM_BL) ChromeScriptingBindings.cs
 
 ChromeScriptingBindings.cs: ChromeScripting.h ChromeScripting.m
-	$(SHARPIE) --sdk=macosx10.9 --namespace=Actionix.Bindings --omit-verify-attrs ChromeScripting.h --clang $(CFLAGS) > $@
+	$(SHARPIE) -tlm-do-not-submit \
+		bind --sdk=macosx10.9 --namespace=Actionix.Bindings --classic \
+		ChromeScripting.h \
+		--clang $(CFLAGS)
+	@mv ApiDefinitions.cs $@
 
 dylib: libchrome-scripting.dylib
 
@@ -43,5 +47,4 @@ Chrome.sdef:
 	$(SDEF) /Applications/Google\ Chrome.app > Chrome.sdef
 
 clean:
-	-@$(RM) -rf *.o *.a *.dylib *.dll Chrome.h Chrome.sdef ChromeScriptingBindings.cs
-
+	-@$(RM) -rf *.o *.a *.dylib *.dll Chrome.h Chrome.sdef ChromeScriptingBindings.cs ApiDefinitions.cs

@@ -32,6 +32,7 @@
         <Command type="AfterClean" command="make clean" workingdir="${SolutionDir}/Sdefs" />
       </CustomCommands>
     </CustomCommands>
+    <UseRefCounting>false</UseRefCounting>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -53,6 +54,7 @@
         <Command type="AfterClean" command="make clean" workingdir="${SolutionDir}/Sdefs" />
       </CustomCommands>
     </CustomCommands>
+    <UseRefCounting>false</UseRefCounting>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -69,6 +71,7 @@
     <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <EnableCodeSigning>true</EnableCodeSigning>
     <EnablePackageSigning>true</EnablePackageSigning>
+    <UseRefCounting>false</UseRefCounting>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -91,11 +94,9 @@
     <Folder Include="EventMonitors\" />
     <Folder Include="Scripting\" />
     <Folder Include="Helpers\" />
+    <Folder Include="App\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="SharedSettings.cs" />
     <Compile Include="Interfaces\IMenuBuilder.cs" />
     <Compile Include="Interfaces\IMenuItemsBuilder.cs" />
     <Compile Include="MenuBuilders\StaticMenuItemsBuilder.cs" />
@@ -105,7 +106,6 @@
     <Compile Include="MenuBuilders\MenuBuilder.cs" />
     <Compile Include="Interfaces\IMenuVisualizer.cs" />
     <Compile Include="MenuVisualizers\IconMenuVisualizer.cs" />
-    <Compile Include="Bootstrapper.cs" />
     <Compile Include="MenuBuilders\DirectoryMenuItemsBuilder.cs" />
     <Compile Include="Interfaces\ICommandExecutor.cs" />
     <Compile Include="CommandExecutors\ShellCommandExecutor.cs" />
@@ -145,6 +145,10 @@
     <Compile Include="Interfaces\ISystemStatusBarItem.cs" />
     <Compile Include="Interfaces\IGlobalShortcutKeyMonitor.cs" />
     <Compile Include="Interfaces\IPeriodicEventMonitor.cs" />
+    <Compile Include="App\AppDelegate.cs" />
+    <Compile Include="App\Bootstrapper.cs" />
+    <Compile Include="App\Main.cs" />
+    <Compile Include="App\SharedSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

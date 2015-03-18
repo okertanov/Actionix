@@ -1,6 +1,9 @@
 #import "Chrome.h"
 #import "ChromeScripting.h"
 
+static NSString* _chromeBundle;
+static ChromeApplication* _chromeApplication;
+
 @interface ChromeScripting()
 
 @property (retain, nonatomic) NSString* chromeBundle;
@@ -10,8 +13,25 @@
 
 @implementation ChromeScripting
 
-@synthesize chromeBundle;
-@synthesize chromeApplication;
+-(NSString*)chromeBundle
+{
+    return _chromeBundle;
+}
+
+-(void)setChromeBundle:(NSString *)bundleName
+{
+    _chromeBundle = bundleName;
+}
+
+-(ChromeApplication*)chromeApplication
+{
+    return _chromeApplication;
+}
+
+-(void)setChromeApplication:(ChromeApplication *)app
+{
+    _chromeApplication = app;
+}
 
 -(id)initWithBundleName:(NSString *)bundleName
 {
@@ -56,4 +76,3 @@
 }
 
 @end
-
