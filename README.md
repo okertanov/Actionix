@@ -54,6 +54,11 @@ See also
 [Lighthead Software Caffeine](http://lightheadsw.com/caffeine/)  
 [Retina Mac Apps](http://retinamacapps.com/)  
 
+New Resources
+-------------
+[SBApplication](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/SBApplication_Class/)  
+[SBApplicationDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/SBApplicationDelegate_Protocol/index.html)  
+
 Resources
 ---------
 [App Icon](https://www.iconfinder.com/icons/183175/genius_icon#size=512)  
