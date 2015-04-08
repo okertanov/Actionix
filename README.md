@@ -58,6 +58,8 @@ New Resources
 -------------
 [SBApplication](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/SBApplication_Class/)  
 [SBApplicationDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/SBApplicationDelegate_Protocol/index.html)  
+[Open Scripting Architecture](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptX/Concepts/osa.html)  
+[AppleScript Language Guide: Commands Reference](https://developer.apple.com/library/mac/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html)  
 
 Resources
 ---------
