@@ -149,6 +149,7 @@
     <Compile Include="App\Bootstrapper.cs" />
     <Compile Include="App\Main.cs" />
     <Compile Include="App\SharedSettings.cs" />
+    <Compile Include="EventMonitors\VoidPeriodicEventMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

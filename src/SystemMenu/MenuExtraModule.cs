@@ -54,7 +54,7 @@ namespace Actionix
 			// Periodic Events Handler
 			//
 			_periodicEventMonitor.Activate((ev) => {
-				var msg = new PeriodicEventMessage(NSApplication.SharedApplication, ev);
+				var msg = new PeriodicEventMessage(this, ev);
 				hub.PublishAsync(msg);
 			});
 

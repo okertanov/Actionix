@@ -20,7 +20,7 @@ namespace Actionix
 
 
 			Container.Register<IGlobalShortcutKeyMonitor, GlobalShortcutKeyMonitor>().AsSingleton();
-			Container.Register<IPeriodicEventMonitor, PeriodicEventMonitor>().AsSingleton();
+			Container.Register<IPeriodicEventMonitor, VoidPeriodicEventMonitor>().AsSingleton();
 
 			Container.Register<ISystemStatusBarItem, SystemStatusBarItem>().AsSingleton();
 			Container.Register<IMenuExtraModule, MenuExtraModule>().AsSingleton();
