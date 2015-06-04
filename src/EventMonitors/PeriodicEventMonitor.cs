@@ -86,7 +86,7 @@ namespace Actionix
 				}
 				while(true);
 			}
-			catch(Exception e)
+			catch(Exception)
 			{
 			}
 		}
