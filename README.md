@@ -46,6 +46,19 @@ Requirements
 [MonoMac](http://www.mono-project.com/MonoMac)  
 [Monobjc](http://www.monobjc.net/)  
 
+Build & Install
+---------------
+
+    cd projects/_github_/Actionix.git
+    git pull && git push && git status
+    git submodule init
+    git submodule update
+    cd src/Sdefs
+    make clean all
+    cd ../
+    xbuild /p:Configuration=Release Actionix.sln
+    cp -a bin/Release/Actionix.app ~/Applications
+
 See also
 --------
 [Super OS X menubar items](http://menu.jeweledplatypus.org/)  
