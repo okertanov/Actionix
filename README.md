@@ -59,6 +59,12 @@ Build & Install
     xbuild /p:Configuration=Release Actionix.sln
     cp -a bin/Release/Actionix.app ~/Applications
 
+Apple Script snippets
+---------------------
+
+    tell application "Google Chrome" to tell front window to get URL of tab (active tab index)
+
+
 See also
 --------
 [Super OS X menubar items](http://menu.jeweledplatypus.org/)  
