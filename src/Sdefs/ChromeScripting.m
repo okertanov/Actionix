@@ -13,59 +13,51 @@ static ChromeApplication* _chromeApplication;
 
 @implementation ChromeScripting
 
--(NSString*)chromeBundle
-{
+-(NSString*)chromeBundle {
     return _chromeBundle;
 }
 
--(void)setChromeBundle:(NSString *)bundleName
-{
+-(void)setChromeBundle:(NSString*)bundleName {
     _chromeBundle = bundleName;
 }
 
--(ChromeApplication*)chromeApplication
-{
+-(ChromeApplication*)chromeApplication {
     return _chromeApplication;
 }
 
--(void)setChromeApplication:(ChromeApplication *)app
-{
+-(void)setChromeApplication:(ChromeApplication*)app {
     _chromeApplication = app;
 }
 
--(id)initWithBundleName:(NSString *)bundleName
-{
+-(id)initWithBundleName:(NSString*)bundleName {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         self.chromeBundle = bundleName;
         self.chromeApplication = [SBApplication applicationWithBundleIdentifier:self.chromeBundle];
     }
     return self;
 }
 
--(void)activate
-{
+-(void)activate {
     [self.chromeApplication activate];
     usleep(100000);
 }
 
--(void)openTab:(NSString*)url
-{
+-(void)openTab:(NSString*)url {
     ChromeTab *tab = [[[self.chromeApplication classForScriptingClass:@"tab"] alloc] init];
-    ChromeWindow *window = [self activeWindow];
+    ChromeWindow *window = (ChromeWindow*)[self activeWindow];
     [window.tabs addObject:tab];
     if ([url length] != 0) {
         tab.URL = url;
     }
 }
 
-- (ChromeTab *)activeTab {
-    return [self activeWindow].activeTab;
+-(SBObject*)activeTab {
+    return ((ChromeWindow*)[self activeWindow]).activeTab;
 }
 
-- (ChromeWindow *)activeWindow {
-    ChromeWindow *window = self.chromeApplication.windows.firstObject;
+- (SBObject*)activeWindow {
+    ChromeWindow* window = self.chromeApplication.windows.firstObject;
 
     if (!window) {
         window = [[[self.chromeApplication classForScriptingClass:@"window"] alloc] init];
@@ -73,6 +65,15 @@ static ChromeApplication* _chromeApplication;
     }
 
     return window;
+}
+
+-(NSArray<NSString*>*)allTabs {
+    ChromeWindow *window = (ChromeWindow*)[self activeWindow];
+    NSMutableArray<NSString*>* tabNames = [[NSMutableArray<NSString*> alloc] init];
+    for (ChromeTab* tab in window.tabs) {
+        [tabNames addObject:tab.title];
+    }
+    return tabNames;
 }
 
 @end

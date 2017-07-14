@@ -15,6 +15,7 @@ all: bindings
 bindings: dylib lib ChromeScriptingBindings.dll
 
 ChromeScriptingBindings.dll: ChromeScriptingBindings.cs
+	sed -i '' '/\[Verify/d' $<
 	$(BM) -d=MONOMAC -r=System.Drawing.dll --baselib=$(BM_BL) ChromeScriptingBindings.cs
 
 ChromeScriptingBindings.cs: ChromeScripting.h ChromeScripting.m
