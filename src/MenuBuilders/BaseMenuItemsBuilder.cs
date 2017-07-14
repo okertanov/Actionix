@@ -25,8 +25,7 @@ namespace Actionix {
 
 		public virtual void AttachTo(NSMenu menu) {
 			MenuItems.ToList().ForEach(item => {
-
-				var menuItem = item.Title.StartsWith("-") ?
+				var menuItem = item.Title.StartsWith("-", StringComparison.Ordinal) ?
 					NSMenuItem.SeparatorItem :
 					new NSMenuItem(item.Title, "", OnMenu);
 				if (!String.IsNullOrWhiteSpace(item.Icon)) {

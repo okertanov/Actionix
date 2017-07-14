@@ -8,8 +8,7 @@ namespace Actionix {
 	// Creates new object entries, like new file on desktop, etc.
 	//
 	public class NewObjectMenuItemsBuilder : BaseMenuItemsBuilder {
-		private static readonly IList<IMenuItem> NewObjectMenuItems = new List<IMenuItem>()
-		{
+		private static readonly IList<IMenuItem> NewObjectMenuItems = new List<IMenuItem> {
 			new MenuItem("New File on Desktop", () => SelectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewFileOnDesktop")),
 			new MenuItem("New Google Chrome Tab",   () => SelectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewGoogleChromeTab"))
 		};
