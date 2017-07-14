@@ -1,5 +1,4 @@
-﻿using System;
-using MonoMac.AppKit;
+﻿using MonoMac.AppKit;
 using System.Collections.Generic;
 using MonoMac.Foundation;
 
@@ -12,12 +11,10 @@ namespace Actionix {
 			new MenuItem("Quit", () => SelectorCommandExecutor.Execute("AppMenuItemsHandler.AppQuitCommand")),
 		};
 
-		protected override IList<IMenuItem> MenuItems {
-			get { return AppMenuItems; }
-			set { throw new NotSupportedException(); }
-		}
+		protected override IList<IMenuItem> MenuItems => AppMenuItems;
 	}
 
+	[Register("AppMenuItemsHandler")]
 	internal class AppMenuItemsHandler {
 		[Export("AppQuitCommand")]
 		public static void AppQuitCommand() {

@@ -13,12 +13,10 @@ namespace Actionix {
 			new MenuItem("New Google Chrome Tab",   () => SelectorCommandExecutor.Execute("NewObjectMenuItemsHandler.NewGoogleChromeTab"))
 		};
 
-		protected override IList<IMenuItem> MenuItems {
-			get { return NewObjectMenuItems; }
-			set { throw new NotSupportedException(); }
-		}
+		protected override IList<IMenuItem> MenuItems => NewObjectMenuItems;
 	}
 
+	[Register("NewObjectMenuItemsHandler")]
 	internal class NewObjectMenuItemsHandler {
 		private static IEnumerator<int> CreateIntegralSequenceEnumerator(int start) {
 			return Enumerable.Range(start, int.MaxValue).GetEnumerator();

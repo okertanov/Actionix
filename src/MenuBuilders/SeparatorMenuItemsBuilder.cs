@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Actionix {
 	//
@@ -10,9 +9,6 @@ namespace Actionix {
 			new MenuItem("--------", null)
 		};
 
-		protected override IList<IMenuItem> MenuItems {
-			get { return SeparatorMenuItems; }
-			set { throw new NotSupportedException(); }
-		}
+		protected override IList<IMenuItem> MenuItems => SeparatorMenuItems;
 	}
 }

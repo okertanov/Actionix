@@ -15,7 +15,7 @@ namespace Actionix {
 		protected static readonly ISelectorCommandExecutor SelectorCommandExecutor;
 		protected static readonly IShellCommandExecutor ShellCommandExecutor;
 
-		protected abstract IList<IMenuItem> MenuItems { get; set; }
+		protected abstract IList<IMenuItem> MenuItems { get; }
 
 		static BaseMenuItemsBuilder() {
 			ApplicationCommandExecutor = Container.Resolve<IApplicationCommandExecutor>();

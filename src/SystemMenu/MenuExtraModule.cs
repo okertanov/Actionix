@@ -30,6 +30,10 @@ namespace Actionix {
 			var menuBuilder = new MenuBuilder(SharedSettings.AppName, new IMenuItemsBuilder[] {
 				new NewObjectMenuItemsBuilder(),
 				new SeparatorMenuItemsBuilder(),
+				new FavoriteAppsMenuItemsBuilder(),
+				new SeparatorMenuItemsBuilder(),
+				new ChromeTabsMenuItemsBuilder(),
+				new SeparatorMenuItemsBuilder(),
 				new StaticMenuItemsBuilder(),
 				new SeparatorMenuItemsBuilder(),
 				new AppMenuItemsBuilder()

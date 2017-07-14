@@ -2,9 +2,9 @@
 
 namespace Actionix {
 	public class MenuItem : IMenuItem {
-		public string Title { get; private set; }
-		public Action Action { get; private set; }
-		public string Icon { get; private set; }
+		public string Title { get; }
+		public Action Action { get; }
+		public string Icon { get; }
 
 		public MenuItem(string title, Action action) : this(title, action, null) {
 		}
