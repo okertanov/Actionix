@@ -9,4 +9,6 @@
 @property (retain, nonatomic) NSObject* icon;
 @property (retain, nonatomic) NSString* title;
 
+-(instancetype)initWithTitle:(NSString*)title;
+
 @end
