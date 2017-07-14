@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Actionix.Helpers;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	//
 	// Create static/hardcoded entires
 	//

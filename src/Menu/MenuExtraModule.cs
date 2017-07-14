@@ -1,7 +1,11 @@
 ﻿using TinyMessenger;
 using MonoMac.AppKit;
+using Actionix.App;
+using Actionix.MenuBuilders;
+using Actionix.MenuVisualizers;
+using Actionix.Messages;
 
-namespace Actionix {
+namespace Actionix.Menu {
 	//
 	// Menu extra main module
 	//

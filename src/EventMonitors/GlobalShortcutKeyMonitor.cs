@@ -2,7 +2,7 @@
 using MonoMac.AppKit;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.EventMonitors {
 	public class GlobalShortcutKeyMonitor : IGlobalShortcutKeyMonitor {
 		private NSObject _globalHandler;
 		private NSObject _localHandler;

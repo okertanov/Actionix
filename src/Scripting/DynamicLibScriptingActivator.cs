@@ -2,7 +2,7 @@
 using MonoMac.ObjCRuntime;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.Scripting {
 	public class DynamicLibScriptingActivator : IDisposable {
 		private IntPtr _handle;
 		private string _dlPath;

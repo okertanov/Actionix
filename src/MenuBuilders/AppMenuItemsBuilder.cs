@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	//
 	// Own app menu items
 	//

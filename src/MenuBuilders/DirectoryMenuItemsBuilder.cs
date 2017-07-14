@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoMac.AppKit;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	//
 	// Creates the entires from a file system directory structure
 	//

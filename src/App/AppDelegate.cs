@@ -1,7 +1,7 @@
 ﻿using MonoMac.AppKit;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.App {
 	[Register("ActionixAppDelegate")]
 	public class ActionixAppDelegate : NSApplicationDelegate {
 		public ActionixAppDelegate() {

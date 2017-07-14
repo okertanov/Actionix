@@ -2,7 +2,7 @@
 using System.Linq;
 using TinyMessenger;
 
-namespace Actionix {
+namespace Actionix.CommandExecutors {
 	public class ShellCommandContext : ICommandContext {
 		public object Target { get; set; }
 		public string CommandLine { get; set; }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Actionix {
+namespace Actionix.Helpers {
 	public static class MessageBoxHelper {
 		/*var alert = new NSAlert();
 		alert.MessageText = "Hi!";

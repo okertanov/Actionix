@@ -1,8 +1,9 @@
 ﻿using System;
+using Actionix.App;
 using MonoMac.AppKit;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.MenuVisualizers {
 	public class IconMenuVisualizer : IMenuVisualizer {
 		public void AttachTo(NSObject item) {
 			var statusItem = item as NSStatusItem;

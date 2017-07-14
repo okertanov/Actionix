@@ -1,8 +1,12 @@
-﻿using MonoMac.AppKit;
+﻿using Actionix.CommandExecutors;
+using Actionix.EventMonitors;
+using Actionix.Menu;
+using Actionix.Messages;
+using MonoMac.AppKit;
 using TinyIoC;
 using TinyMessenger;
 
-namespace Actionix {
+namespace Actionix.App {
 	public static class Bootstrapper {
 		private static readonly TinyIoCContainer Container = TinyIoCContainer.Current;
 

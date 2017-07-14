@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Actionix.App;
 using MonoMac.AppKit;
 using TinyIoC;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	//
 	// Create static/hardcoded entires
 	//

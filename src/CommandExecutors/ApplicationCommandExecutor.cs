@@ -1,7 +1,7 @@
 using MonoMac.AppKit;
 using TinyMessenger;
 
-namespace Actionix {
+namespace Actionix.CommandExecutors {
 	public class ApplicationCommandContext : ICommandContext {
 		public object Target { get; set; }
 		public string BundleName { get; set; }

@@ -3,7 +3,7 @@ using MonoMac.AppKit;
 using System.Threading;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.EventMonitors {
 	public class PeriodicEventMonitor : IPeriodicEventMonitor {
 		private const double PeriodicEventMonitorDelay = 0.0;
 		private const double PeriodicEventMonitorPeriod = 3.0;

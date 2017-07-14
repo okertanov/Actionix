@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	public class MenuItem : IMenuItem {
 		public string Title { get; }
 		public Action Action { get; }

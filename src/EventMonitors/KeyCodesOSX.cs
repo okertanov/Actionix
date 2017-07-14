@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Actionix {
+namespace Actionix.EventMonitors {
 	enum EventModifiers {
 		activeFlagBit = 0,
 		btnStateBit = 7,

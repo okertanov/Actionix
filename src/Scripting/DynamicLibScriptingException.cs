@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Actionix {
+namespace Actionix.Scripting {
 	public class DynamicLibScriptingException : Exception {
 		public DynamicLibScriptingException() : base() { }
 		public DynamicLibScriptingException(string what) : base(what) { }

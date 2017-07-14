@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.Helpers {
 	public class FileSystemHelperException : Exception {
 		public FileSystemHelperException() : base() { }
 		public FileSystemHelperException(string what) : base(what) { }

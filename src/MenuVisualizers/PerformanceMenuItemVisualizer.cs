@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.MenuVisualizers {
 	public class PerformanceMenuItemVisualizer : IMenuVisualizer {
 		public PerformanceMenuItemVisualizer() {
 		}

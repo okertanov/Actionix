@@ -2,7 +2,7 @@
 using MonoMac.Foundation;
 using System.IO;
 
-namespace Actionix {
+namespace Actionix.Helpers {
 	public static class BundleUtils {
 		private const string StdIconExtension = "icns";
 

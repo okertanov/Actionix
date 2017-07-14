@@ -1,6 +1,7 @@
-﻿using MonoMac.AppKit;
+﻿using Actionix.Scripting;
+using MonoMac.AppKit;
 
-namespace Actionix {
+namespace Actionix.App {
 	class ActionixMain {
 		static void Main(string[] args) {
 			NSApplication.Init();

@@ -1,8 +1,10 @@
 ﻿using MonoMac.AppKit;
 using System.Drawing;
 using TinyMessenger;
+using Actionix.App;
+using Actionix.Messages;
 
-namespace Actionix {
+namespace Actionix.Menu {
 	public class SystemStatusBarItem : ISystemStatusBarItem {
 		private readonly NSStatusItem _systemStatusBarItem;
 

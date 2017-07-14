@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using TinyMessenger;
 
-namespace Actionix {
+namespace Actionix.CommandExecutors {
 	public class SelectorCommandContext : ICommandContext {
 		public object Target { get; set; }
 		public string SelectorName { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoMac.AppKit;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	//
 	// Creates dynamic event entries, like time, processes, etc.
 	//

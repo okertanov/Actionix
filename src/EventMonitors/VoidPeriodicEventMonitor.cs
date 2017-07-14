@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoMac.AppKit;
 
-namespace Actionix {
+namespace Actionix.EventMonitors {
 	public class VoidPeriodicEventMonitor : IPeriodicEventMonitor {
 		public void Activate(Action<NSEvent> onEventMonitorAction) {
 		}

@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Actionix {
+namespace Actionix.App {
 	public static class SharedSettings {
 		public const string AppName = "Actionix";
 

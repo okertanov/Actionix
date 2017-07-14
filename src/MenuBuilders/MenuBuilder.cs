@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using MonoMac.AppKit;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	public class MenuBuilder : IMenuBuilder {
 		private readonly string _menuName;
 		private readonly IMenuItemsBuilder[] _builders;

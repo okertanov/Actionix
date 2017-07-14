@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Actionix.Helpers;
 using MonoMac.Foundation;
 
-namespace Actionix {
+namespace Actionix.MenuBuilders {
 	//
 	// Creates new object entries, like new file on desktop, etc.
 	//

@@ -116,12 +116,13 @@
     <Folder Include="MenuVisualizers\" />
     <Folder Include="CommandExecutors\" />
     <Folder Include="TinyIoC\" />
-    <Folder Include="SystemMenu\" />
+    <Folder Include="Menu\" />
     <Folder Include="Messages\" />
     <Folder Include="EventMonitors\" />
     <Folder Include="Scripting\" />
     <Folder Include="Helpers\" />
     <Folder Include="App\" />
+    <Folder Include="Core\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IMenuBuilder.cs" />
@@ -150,14 +151,14 @@
     <Compile Include="Interfaces\IApplicationCommandExecutor.cs" />
     <Compile Include="Interfaces\ISelectorCommandExecutor.cs" />
     <Compile Include="Interfaces\IShellCommandExecutor.cs" />
-    <Compile Include="SystemMenu\SystemStatusBarItem.cs" />
+    <Compile Include="Menu\SystemStatusBarItem.cs" />
     <Compile Include="Interfaces\IMenuExtra.cs" />
     <Compile Include="Messages\AppBeforeExitMessage.cs" />
     <Compile Include="Interfaces\IMenuExtraModule.cs" />
     <Compile Include="EventMonitors\GlobalShortcutKeyMonitor.cs" />
     <Compile Include="Scripting\DynamicLibScriptingActivator.cs" />
     <Compile Include="EventMonitors\KeyCodesOSX.cs" />
-    <Compile Include="SystemMenu\MenuExtraModule.cs" />
+    <Compile Include="Menu\MenuExtraModule.cs" />
     <Compile Include="MenuVisualizers\BatteryMenuItemVisualizer.cs" />
     <Compile Include="MenuVisualizers\PerformanceMenuItemVisualizer.cs" />
     <Compile Include="Helpers\FileSystemHelper.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="MenuBuilders\ChromeTabsMenuItemsBuilder.cs" />
     <Compile Include="Scripting\DynamicLibScriptingException.cs" />
     <Compile Include="MenuBuilders\FavoriteAppsMenuItemsBuilder.cs" />
+    <Compile Include="Core\WeakReferenceEx.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
