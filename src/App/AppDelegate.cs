@@ -1,25 +1,19 @@
 ﻿using MonoMac.AppKit;
 using MonoMac.Foundation;
 
-namespace Actionix
-{
-	[Register ("ActionixAppDelegate")]
-	public class ActionixAppDelegate : NSApplicationDelegate
-	{
-		public ActionixAppDelegate() : base()
-		{
+namespace Actionix {
+	[Register("ActionixAppDelegate")]
+	public class ActionixAppDelegate : NSApplicationDelegate {
+		public ActionixAppDelegate() {
 			Bootstrapper.Register();
 		}
 
-		public override void FinishedLaunching(NSObject notification)
-		{
+		public override void FinishedLaunching(NSObject notification) {
 			Bootstrapper.Bootstrap();
 		}
 
-		public override void WillTerminate(NSNotification notification)
-		{
+		public override void WillTerminate(NSNotification notification) {
 			Bootstrapper.Terminate();
 		}
 	}
 }
-

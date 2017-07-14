@@ -3,9 +3,9 @@ using MonoMac.AppKit;
 
 namespace Actionix {
 	//
-	// Creates dynamic event entries, like time, processes, etc.
+	// Chrome tabs menu items
 	//
-	public class DynamicMenuItemsBuilder : IMenuItemsBuilder {
+	public class ChromeTabsMenuItemsBuilder : IMenuItemsBuilder {
 		public void AttachTo(NSMenu menu) {
 		}
 

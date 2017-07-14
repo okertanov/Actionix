@@ -1,13 +1,8 @@
-﻿using System;
-using TinyMessenger;
+﻿using TinyMessenger;
 
-namespace Actionix
-{
-	public class AppBeforeExitMessage : GenericTinyMessage<object>
-	{
-		public AppBeforeExitMessage(object sender, object payload) : base(sender, payload)
-		{
+namespace Actionix {
+	public class AppBeforeExitMessage : GenericTinyMessage<object> {
+		public AppBeforeExitMessage(object sender, object payload) : base(sender, payload) {
 		}
 	}
 }
-

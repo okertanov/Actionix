@@ -1,24 +1,18 @@
 ﻿using System;
-using MonoMac.AppKit;
 using System.Collections.Generic;
 
-namespace Actionix
-{
+namespace Actionix {
 	//
 	// Creates single separator
 	//
-	public class SeparatorMenuItemsBuilder : BaseMenuItemsBuilder
-	{
-		private static readonly IList<IMenuItem> SeparatorMenuItems = new List<IMenuItem>()
-		{
+	public class SeparatorMenuItemsBuilder : BaseMenuItemsBuilder {
+		private static readonly IList<IMenuItem> SeparatorMenuItems = new List<IMenuItem> {
 			new MenuItem("--------", null)
 		};
 
-		protected override IList<IMenuItem> MenuItems
-		{
+		protected override IList<IMenuItem> MenuItems {
 			get { return SeparatorMenuItems; }
 			set { throw new NotSupportedException(); }
 		}
 	}
 }
-

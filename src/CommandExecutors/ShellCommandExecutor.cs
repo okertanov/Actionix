@@ -2,33 +2,26 @@
 using System.Linq;
 using TinyMessenger;
 
-namespace Actionix
-{
-	public class ShellCommandContext : ICommandContext
-	{
+namespace Actionix {
+	public class ShellCommandContext : ICommandContext {
 		public object Target { get; set; }
 		public string CommandLine { get; set; }
 	}
 
-	public class ShellCommandExecutor : IShellCommandExecutor
-	{
-		public ShellCommandExecutor(ITinyMessengerHub hub)
-		{
+	public class ShellCommandExecutor : IShellCommandExecutor {
+		public ShellCommandExecutor(ITinyMessengerHub hub) {
 		}
 
-		public void Execute(ICommandContext context)
-		{
+		public void Execute(ICommandContext context) {
 			var ctx = context as ShellCommandContext;
 
-			if (ctx != null)
-			{
+			if (ctx != null) {
 				Execute(ctx.CommandLine);
 			}
 		}
 
-		public void Execute(string context)
-		{
-			var tokens = context.Split(new[]{' '}, StringSplitOptions.RemoveEmptyEntries);
+		public void Execute(string context) {
+			var tokens = context.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 			var command = tokens.FirstOrDefault();
 			var parameters = String.Join(" ", tokens.Skip(1));
 			System.Diagnostics.Process process = new System.Diagnostics.Process();
@@ -42,4 +35,3 @@ namespace Actionix
 		}
 	}
 }
-

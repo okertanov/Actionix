@@ -1,13 +1,8 @@
-﻿using System;
-using MonoMac.AppKit;
-using MonoMac.ObjCRuntime;
+﻿using MonoMac.AppKit;
 
-namespace Actionix
-{
-	class ActionixMain
-	{
-		static void Main(string[] args)
-		{
+namespace Actionix {
+	class ActionixMain {
+		static void Main(string[] args) {
 			NSApplication.Init();
 			NSApplication.SharedApplication.Delegate = new ActionixAppDelegate();
 
@@ -17,4 +12,3 @@ namespace Actionix
 		}
 	}
 }
-

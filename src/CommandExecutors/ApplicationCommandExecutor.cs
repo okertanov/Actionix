@@ -1,37 +1,26 @@
-using System;
-using System.Linq;
 using MonoMac.AppKit;
-using System.Collections.Generic;
 using TinyMessenger;
 
-namespace Actionix
-{
-	public class ApplicationCommandContext : ICommandContext
-	{
+namespace Actionix {
+	public class ApplicationCommandContext : ICommandContext {
 		public object Target { get; set; }
 		public string BundleName { get; set; }
 	}
 
-	public class ApplicationCommandExecutor : IApplicationCommandExecutor
-	{
-		public ApplicationCommandExecutor(ITinyMessengerHub hub)
-		{
+	public class ApplicationCommandExecutor : IApplicationCommandExecutor {
+		public ApplicationCommandExecutor(ITinyMessengerHub hub) {
 		}
 
-		public void Execute(ICommandContext context)
-		{
+		public void Execute(ICommandContext context) {
 			var ctx = context as ApplicationCommandContext;
 
-			if (ctx != null)
-			{
+			if (ctx != null) {
 				Execute(ctx.BundleName);
 			}
 		}
 
-		public void Execute(string context)
-		{
+		public void Execute(string context) {
 			NSWorkspace.SharedWorkspace.LaunchApplication(context);
 		}
 	}
 }
-

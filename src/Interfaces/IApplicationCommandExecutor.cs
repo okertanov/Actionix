@@ -1,8 +1,6 @@
 using System;
 
-namespace Actionix
-{
-	public interface IApplicationCommandExecutor: ICommandExecutor
-	{
+namespace Actionix {
+	public interface IApplicationCommandExecutor : ICommandExecutor {
 	}
 }

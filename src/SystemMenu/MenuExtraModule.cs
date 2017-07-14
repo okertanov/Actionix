@@ -1,22 +1,18 @@
-﻿using System;
-using TinyMessenger;
+﻿using TinyMessenger;
 using MonoMac.AppKit;
 
-namespace Actionix
-{
+namespace Actionix {
 	//
 	// Menu extra main module
 	//
-	public class MenuExtraModule : IMenuExtraModule
-	{
+	public class MenuExtraModule : IMenuExtraModule {
 		private ISystemStatusBarItem _systemStatusBarItem;
 		private IGlobalShortcutKeyMonitor _globalShortcutKeyMonitor;
 		private IPeriodicEventMonitor _periodicEventMonitor;
 		private readonly ITinyMessengerHub _hub;
 		private TinyMessageSubscriptionToken _appBeforeExitMessageToken;
 
-		public MenuExtraModule(ITinyMessengerHub hub, ISystemStatusBarItem systemStatusBarItem, IGlobalShortcutKeyMonitor globalShortcutKeyMonitor, IPeriodicEventMonitor periodicEventMonitor)
-		{
+		public MenuExtraModule(ITinyMessengerHub hub, ISystemStatusBarItem systemStatusBarItem, IGlobalShortcutKeyMonitor globalShortcutKeyMonitor, IPeriodicEventMonitor periodicEventMonitor) {
 			//
 			// Initialize member fields via IoC
 			//
@@ -66,41 +62,33 @@ namespace Actionix
 			});
 		}
 
-		public void Run()
-		{
+		public void Run() {
 		}
 
-		public void Dispose()
-		{
+		public void Dispose() {
 			Cleanup();
 		}
 
-		private void Cleanup()
-		{
-			if (_appBeforeExitMessageToken != null)
-			{
+		private void Cleanup() {
+			if (_appBeforeExitMessageToken != null) {
 				_hub.Unsubscribe<AppBeforeExitMessage>(_appBeforeExitMessageToken);
 				_appBeforeExitMessageToken = null;
 			}
 
-			if (_systemStatusBarItem != null)
-			{
+			if (_systemStatusBarItem != null) {
 				_systemStatusBarItem.Dispose();
 				_systemStatusBarItem = null;
 			}
 
-			if (_globalShortcutKeyMonitor != null)
-			{
+			if (_globalShortcutKeyMonitor != null) {
 				_globalShortcutKeyMonitor.Dispose();
 				_globalShortcutKeyMonitor = null;
 			}
 
-			if (_periodicEventMonitor != null)
-			{
+			if (_periodicEventMonitor != null) {
 				_periodicEventMonitor.Dispose();
 				_periodicEventMonitor = null;
 			}
 		}
 	}
 }
-

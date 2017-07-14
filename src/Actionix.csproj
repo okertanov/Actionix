@@ -177,6 +177,8 @@
     <Compile Include="App\Main.cs" />
     <Compile Include="App\SharedSettings.cs" />
     <Compile Include="EventMonitors\VoidPeriodicEventMonitor.cs" />
+    <Compile Include="MenuBuilders\ChromeTabsMenuItemsBuilder.cs" />
+    <Compile Include="Scripting\DynamicLibScriptingException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

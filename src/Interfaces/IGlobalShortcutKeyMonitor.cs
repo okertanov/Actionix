@@ -1,9 +1,6 @@
 ﻿using System;
 
-namespace Actionix
-{
-	public interface IGlobalShortcutKeyMonitor : IEventMonitor
-	{
+namespace Actionix {
+	public interface IGlobalShortcutKeyMonitor : IEventMonitor {
 	}
 }
-

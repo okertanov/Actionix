@@ -1,41 +1,30 @@
 using System;
 using System.Linq;
-using MonoMac.AppKit;
-using System.Collections.Generic;
-using MonoMac.Foundation;
-using MonoMac.ObjCRuntime;
 using System.Reflection;
 using TinyMessenger;
 
-namespace Actionix
-{
-	public class SelectorCommandContext : ICommandContext
-	{
+namespace Actionix {
+	public class SelectorCommandContext : ICommandContext {
 		public object Target { get; set; }
 		public string SelectorName { get; set; }
 	}
 
-	public class SelectorCommandExecutor  : ISelectorCommandExecutor
-	{
-		public SelectorCommandExecutor(ITinyMessengerHub hub)
-		{
+	public class SelectorCommandExecutor : ISelectorCommandExecutor {
+		public SelectorCommandExecutor(ITinyMessengerHub hub) {
 		}
 
-		public void Execute(ICommandContext context)
-		{
+		public void Execute(ICommandContext context) {
 			var ctx = context as SelectorCommandContext;
 
-			if (ctx != null)
-			{
+			if (ctx != null) {
 				Execute(ctx.SelectorName);
 			}
 		}
 
 		// See http://stackoverflow.com/questions/10475415/how-do-i-send-parameters-using-monotouch-objcruntime-selector-and-perform-select
 		// See http://stackoverflow.com/questions/11908156/call-static-method-with-reflection
-		public void Execute(string context)
-		{
-			var tokens = context.Split(new[]{'.'}, StringSplitOptions.RemoveEmptyEntries);
+		public void Execute(string context) {
+			var tokens = context.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
 			var typeName = tokens.FirstOrDefault();
 			var methodName = tokens.Skip(1).SingleOrDefault();
 
@@ -46,4 +35,3 @@ namespace Actionix
 		}
 	}
 }
-

@@ -1,9 +1,7 @@
 ﻿using System.Drawing;
 
-namespace Actionix
-{
-	public static class SharedSettings
-	{
+namespace Actionix {
+	public static class SharedSettings {
 		public const string AppName = "Actionix";
 
 		public const string StatusBarIconName = "atom-512x512";
@@ -13,4 +11,3 @@ namespace Actionix
 		public const string ChromeScriptingDlybName = "libchrome-scripting.dylib";
 	}
 }
-

@@ -1,9 +1,6 @@
 ﻿using System;
 
-namespace Actionix
-{
-	public interface IPeriodicEventMonitor : IEventMonitor
-	{
+namespace Actionix {
+	public interface IPeriodicEventMonitor : IEventMonitor {
 	}
 }
-

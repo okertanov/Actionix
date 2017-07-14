@@ -1,9 +1,6 @@
 ﻿using System;
 
-namespace Actionix
-{
-	public interface IMenuExtra : IDisposable
-	{
+namespace Actionix {
+	public interface IMenuExtra : IDisposable {
 	}
 }
-

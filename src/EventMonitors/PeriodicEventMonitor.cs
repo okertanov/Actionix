@@ -3,10 +3,8 @@ using MonoMac.AppKit;
 using System.Threading;
 using MonoMac.Foundation;
 
-namespace Actionix
-{
-	public class PeriodicEventMonitor : IPeriodicEventMonitor
-	{
+namespace Actionix {
+	public class PeriodicEventMonitor : IPeriodicEventMonitor {
 		private const double PeriodicEventMonitorDelay = 0.0;
 		private const double PeriodicEventMonitorPeriod = 3.0;
 
@@ -20,31 +18,25 @@ namespace Actionix
 		// See https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSEvent_Class/Reference/Reference.html
 		// NSEvent.StartPeriodicEventsAfterDelay
 		//
-		public PeriodicEventMonitor()
-		{
+		public PeriodicEventMonitor() {
 			Install();
 		}
 
-		public void Activate(Action<NSEvent> onPeriodicEventMonitorAction)
-		{
-			lock (_lockObject)
-			{
+		public void Activate(Action<NSEvent> onPeriodicEventMonitorAction) {
+			lock (_lockObject) {
 				_onPeriodicEventMonitorAction = onPeriodicEventMonitorAction;
 			}
 		}
 
-		public void Install()
-		{
+		public void Install() {
 			NSEvent.StartPeriodicEventsAfterDelay(PeriodicEventMonitorDelay, PeriodicEventMonitorPeriod);
 
 			_threadWithRunLoop = new Thread(RunLoopThreadStart) { IsBackground = true };
 			_threadWithRunLoop.Start();
 		}
 
-		public void Uninstall()
-		{
-			lock (_lockObject)
-			{
+		public void Uninstall() {
+			lock (_lockObject) {
 				_onPeriodicEventMonitorAction = null;
 			}
 
@@ -52,13 +44,10 @@ namespace Actionix
 			NSEvent.StopPeriodicEvents();
 		}
 
-		private void RunLoopThreadStart()
-		{
-			try
-			{
-				var app =  NSApplication.SharedApplication;
-				do
-				{
+		private void RunLoopThreadStart() {
+			try {
+				var app = NSApplication.SharedApplication;
+				do {
 					NSEvent ev = null;
 					NSEventType evType = NSEventType.ApplicationDefined;
 					app.InvokeOnMainThread(() => {
@@ -69,43 +58,35 @@ namespace Actionix
 					});
 
 					Action<NSEvent> onPeriodicEventMonitorAction = null;
-					lock(_lockObject)
-					{
+					lock (_lockObject) {
 						onPeriodicEventMonitorAction = _onPeriodicEventMonitorAction;
 					}
 
-					if (evType == NSEventType.Periodic)
-					{
-						if(onPeriodicEventMonitorAction != null)
-						{
+					if (evType == NSEventType.Periodic) {
+						if (onPeriodicEventMonitorAction != null) {
 							app.InvokeOnMainThread(() => {
 								_onPeriodicEventMonitorAction.Invoke(ev);
 							});
 						}
 					}
 				}
-				while(true);
+				while (true);
 			}
-			catch(Exception)
-			{
+			catch (Exception) {
 			}
 		}
 
-		public void Dispose()
-		{
+		public void Dispose() {
 			Dispose(true);
 			GC.SuppressFinalize(this);
 		}
 
-		protected virtual void Dispose(bool disposing)
-		{
+		protected virtual void Dispose(bool disposing) {
 			Uninstall();
 		}
 
-		~PeriodicEventMonitor()
-		{
+		~PeriodicEventMonitor() {
 			Dispose(false);
 		}
 	}
 }
-

@@ -1,17 +1,12 @@
 ﻿using System;
 using MonoMac.Foundation;
 
-namespace Actionix
-{
-	public class PerformanceMenuItemVisualizer : IMenuVisualizer
-	{
-		public PerformanceMenuItemVisualizer()
-		{
+namespace Actionix {
+	public class PerformanceMenuItemVisualizer : IMenuVisualizer {
+		public PerformanceMenuItemVisualizer() {
 		}
 
-		public void AttachTo(NSObject item)
-		{
+		public void AttachTo(NSObject item) {
 		}
 	}
 }
-

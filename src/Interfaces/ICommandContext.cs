@@ -1,10 +1,7 @@
 ﻿using System;
 
-namespace Actionix
-{
-	public interface ICommandContext
-	{
+namespace Actionix {
+	public interface ICommandContext {
 		object Target { get; set; }
 	}
 }
-
