@@ -6,7 +6,7 @@ SDEF=sdef
 SDP=sdp
 BM=mono ../../tools/MonoMac/bmac.exe
 BM_BL=../../tools/MonoMac/MonoMac.dll
-SHARPIE=../../tools/ObjectiveSharpie.framework/Commands/sharpie
+SHARPIE=/usr/local/bin/sharpie
 
 CFLAGS=-O2 -m32 -Wno-ignored-attributes -ObjC
 
@@ -19,7 +19,7 @@ ChromeScriptingBindings.dll: ChromeScriptingBindings.cs
 
 ChromeScriptingBindings.cs: ChromeScripting.h ChromeScripting.m
 	$(SHARPIE) -tlm-do-not-submit \
-		bind --sdk=macosx10.9 --namespace=Actionix.Bindings --classic \
+		bind --sdk=macosx10.12 --namespace=Actionix.Bindings --classic \
 		ChromeScripting.h \
 		--clang $(CFLAGS)
 	@mv ApiDefinitions.cs $@

@@ -22,7 +22,9 @@ namespace Actionix
 
 			var statusItem = item as NSStatusItem;
 			statusItem.Title = String.Empty;
-			statusItem.Image = NSImage.ImageNamed(SharedSettings.StatusBarIconName);
+			var image = NSImage.ImageNamed(SharedSettings.StatusBarIconName);
+			image.Size = SharedSettings.StatusBarIconSize;
+			statusItem.Image = image;
 			statusItem.HighlightMode = true;
 		}
 	}

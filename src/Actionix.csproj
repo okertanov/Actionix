@@ -10,7 +10,7 @@
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyName>Actionix</AssemblyName>
     <SuppressXamMacUpsell>True</SuppressXamMacUpsell>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <SuppressXamMacMigration>True</SuppressXamMacMigration>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <ConsolePause>false</ConsolePause>
     <UseSGen>false</UseSGen>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
@@ -29,40 +30,63 @@
     <CreatePackage>false</CreatePackage>
     <CustomCommands>
       <CustomCommands>
-        <Command type="BeforeBuild" command="make all" workingdir="${SolutionDir}/Sdefs" />
-        <Command type="AfterClean" command="make clean" workingdir="${SolutionDir}/Sdefs" />
+        <Command>
+          <type>BeforeBuild</type>
+          <command>make all</command>
+          <workingdir>${SolutionDir}/Sdefs</workingdir>
+        </Command>
+        <Command>
+          <type>AfterClean</type>
+          <command>make clean</command>
+          <workingdir>${SolutionDir}/Sdefs</workingdir>
+        </Command>
       </CustomCommands>
     </CustomCommands>
     <UseRefCounting>false</UseRefCounting>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <LinkMode>None</LinkMode>
+    <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <ConsolePause>false</ConsolePause>
-    <LinkMode>Full</LinkMode>
+    <LinkMode>None</LinkMode>
     <UseSGen>false</UseSGen>
-    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <CodeSigningKey>Developer ID Application</CodeSigningKey>
-    <EnableCodeSigning>true</EnableCodeSigning>
-    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey></CodeSigningKey>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
     <CustomCommands>
       <CustomCommands>
-        <Command type="BeforeBuild" command="make all" workingdir="${SolutionDir}/Sdefs" />
-        <Command type="AfterClean" command="make clean" workingdir="${SolutionDir}/Sdefs" />
+        <Command>
+          <type>BeforeBuild</type>
+          <command>make all</command>
+          <workingdir>${SolutionDir}/Sdefs</workingdir>
+        </Command>
+        <Command>
+          <type>AfterClean</type>
+          <command>make clean</command>
+          <workingdir>${SolutionDir}/Sdefs</workingdir>
+        </Command>
       </CustomCommands>
     </CustomCommands>
     <UseRefCounting>false</UseRefCounting>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\AppStore</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <ConsolePause>false</ConsolePause>
     <LinkMode>Full</LinkMode>
     <UseSGen>false</UseSGen>
@@ -73,6 +97,8 @@
     <EnableCodeSigning>true</EnableCodeSigning>
     <EnablePackageSigning>true</EnablePackageSigning>
     <UseRefCounting>false</UseRefCounting>
+    <HttpClientHandler>HttpClientHandler</HttpClientHandler>
+    <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -155,29 +181,21 @@
   <ItemGroup>
     <None Include="Info.plist" />
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="..\resources\atom-256x256.png">
-      <Link>Resources\atom-256x256.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-    <BundleResource Include="..\resources\atom-512x512.png">
-      <Link>Resources\atom-512x512.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-    <BundleResource Include="..\resources\atom-512x512.svg">
-      <Link>Resources\atom-512x512.svg</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-    <BundleResource Include="..\resources\atom-20x20.png">
-      <Link>Resources\atom-20x20.png</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </BundleResource>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <NativeReference Include="Sdefs\libchrome-scripting.dylib">
       <IsCxx>False</IsCxx>
       <Kind>Dynamic</Kind>
     </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\atom-128x128.png" />
+    <BundleResource Include="Resources\atom-256x256.png" />
+    <BundleResource Include="Resources\atom-512x512.png" />
+    <BundleResource Include="Resources\atom-64x64.png" />
+    <BundleResource Include="Resources\ghost-128x128.png" />
+    <BundleResource Include="Resources\ghost-256x256.png" />
+    <BundleResource Include="Resources\ghost-512x512.png" />
+    <BundleResource Include="Resources\ghost-64x64.png" />
   </ItemGroup>
 </Project>
