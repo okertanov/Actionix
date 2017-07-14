@@ -5,6 +5,7 @@ using MonoMac.AppKit;
 using MonoMac.Foundation;
 using MonoMac.ObjCRuntime;
 using Actionix.Core;
+using System.Linq;
 
 namespace Actionix.MenuBuilders {
 	//
@@ -14,7 +15,7 @@ namespace Actionix.MenuBuilders {
 		private const string chromeTabsTitle = "Chrome Tabs";
 
 		private readonly NSMenuItem tabsMenuItem;
-		private List<string> tabs;
+		private List<NSObject> tabs;
 
 		public ChromeTabsMenuItemsBuilder() {
 			tabsMenuItem = new NSMenuItem(chromeTabsTitle, OnMenu) {
@@ -23,13 +24,11 @@ namespace Actionix.MenuBuilders {
 				}
 			};
 
-			tabs = new List<string>();
+			tabs = new List<NSObject>();
 		}
 
 		public void AttachTo(NSMenu menu) {
 			menu.AddItem(tabsMenuItem);
-
-
 		}
 
 		private void OnMenu(object sender, EventArgs args) {
@@ -53,7 +52,7 @@ namespace Actionix.MenuBuilders {
 
 			Console.WriteLine(String.Format("UpdateTabs: Tabs: {0}", tabs.Count));
 
-			tabs.ForEach(t => tabsMenuItem.Submenu.AddItem(new NSMenuItem(t.Substring(0, Math.Min(t.Length, 40)), OnMenu)));
+			tabs.ForEach(t => tabsMenuItem.Submenu.AddItem(new NSMenuItem(t.Description.Substring(0, Math.Min(t.Description.Length, 40)), OnMenu)));
 		}
 
 		private int GetTabsNumber(object sender) {

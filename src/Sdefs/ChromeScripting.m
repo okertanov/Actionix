@@ -67,10 +67,12 @@ static ChromeApplication* _chromeApplication;
     return window;
 }
 
--(NSArray<NSString*>*)allTabs {
+-(NSArray<NSObject*>*)allTabs {
     ChromeWindow *window = (ChromeWindow*)[self activeWindow];
-    NSMutableArray<NSString*>* tabNames = [[NSMutableArray<NSString*> alloc] init];
+    NSMutableArray<NSObject*>* tabNames = [[NSMutableArray<NSObject*> alloc] init];
     for (ChromeTab* tab in window.tabs) {
+        //ChromeTabInfo* info = [[ChromeTabInfo alloc] init];
+        //info.title = [[NSString alloc] initWithString:tab.title];
         [tabNames addObject:tab.title];
     }
     return tabNames;

@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <ScriptingBridge/ScriptingBridge.h>
+#import "ChromeTabInfo.h"
 
 @interface ChromeScripting : NSObject
 
@@ -8,7 +9,7 @@
 -(SBObject*)activeWindow;
 -(SBObject*)activeTab;
 
--(NSArray<NSString*>*)allTabs;
+-(NSArray<NSObject*>*)allTabs;
 
 -(void)activate;
 -(void)openTab:(NSString*)url;
