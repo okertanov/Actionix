@@ -64,6 +64,9 @@ Apple Script snippets
 
     tell application "Google Chrome" to tell front window to get URL of tab (active tab index)
 
+Resources & Icons set
+---------------------
+[https://www.iconfinder.com/iconsets/social-media-2127](https://www.iconfinder.com/iconsets/social-media-2127)  
 
 See also
 --------
