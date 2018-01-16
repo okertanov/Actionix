@@ -26,6 +26,12 @@ Plug-in ideas
 
 TODO
 ----
+ - Show Global shortcut on menu & enable by opening Accesibility system prefs.
+ - New File in current Finder location menu item.
+ - Retina icon
+ + Submenu with List of all Chrome tabs.
+ - Clipboard manager/monitor.
+ - Time tracker / Pomodorro.
  - To create installation package
  - To investigate Menu Extra bundle
  - To investigate Standalone Update process
@@ -34,10 +40,8 @@ TODO
  - Preferences on Alt-Click
  - Preferences tabs with Active menu builders, not installed apps, etc
  - Application is not installed, prompt to install in the Preferences panel
-
  - kbd shortcuts handler with IOC registermany
  - detect chrome installed
-
  - Applications Menu: http://stackoverflow.com/questions/24280878/how-can-i-get-list-of-installed-applications-on-mac-os-x-programmetically
 
 Requirements
