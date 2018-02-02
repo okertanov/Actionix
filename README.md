@@ -23,6 +23,7 @@ Plug-in ideas
  - Remote app control
  - Apps scripting
  - Site monitoring for down, new content
+ - Sleep/Unsleep display: See 'pmset displaysleepnow || caffeinate -u -t 1'
 
 TODO
 ----
